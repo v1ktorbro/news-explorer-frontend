@@ -1,0 +1,9 @@
+@import url(./__link/navigation__link.css);
+@import url(./__btn-logout/navigation__btn-logout.css);
+@import url(./__image-logout/navigation__image-logout.css);
+
+.navigation {
+  display: flex;
+  justify-content: end;
+  margin-right: 104px;
+}
