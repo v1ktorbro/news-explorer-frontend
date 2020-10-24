@@ -1,4 +1,4 @@
-.main__btn-search {
+.searchForm__btn-search {
   width: 168px;
   height: 64px;
   padding: 0;
@@ -17,10 +17,10 @@
   z-index: 1;
 }
 
-.main__btn-search:hover {
+.searchForm__btn-search:hover {
   background: #347EFF;
 }
 
-.main__btn-search:active {
+.searchForm__btn-search:active {
   background: #2A65CC;
 }

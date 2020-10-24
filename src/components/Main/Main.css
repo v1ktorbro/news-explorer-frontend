@@ -1,8 +1,5 @@
 @import url(./__title/main__title.css);
 @import url(./__description/main__description.css);
-@import url(./__form/main__form.css);
-@import url(./__input/main__input.css);
-@import url(./__btn-search/main__btn-search.css);
 
 .main {
   background-image: url(../../images/main.png);
