@@ -1,0 +1,10 @@
+.main__description {
+  color: #ffffff;
+  margin: 32px auto 0 416px;
+  max-width: 545px;
+  max-height: 48px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}

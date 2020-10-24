@@ -1,0 +1,26 @@
+.main__btn-search {
+  width: 168px;
+  height: 64px;
+  padding: 0;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  background: #2F71E5;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+}
+
+.main__btn-search:hover {
+  background: #347EFF;
+}
+
+.main__btn-search:active {
+  background: #2A65CC;
+}
