@@ -1,0 +1,19 @@
+.footer__list-item {
+  list-style-type: none;
+  margin-right: 28px;
+  transition: all .3s linear 0s;
+}
+
+.footer__list-item:first-of-type {
+  margin-right: 32px;
+}
+
+.footer__list-item:last-of-type {
+  margin-right: 0;
+}
+
+.footer__list-item:hover {
+  background-color: rgb(240, 235, 235);
+  transform: scale(1.15);
+  opacity: .7;
+}
