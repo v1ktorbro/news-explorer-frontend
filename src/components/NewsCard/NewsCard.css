@@ -1,0 +1,17 @@
+@import url(./__block-image/news-card__block-image.css);
+@import url(./__image-main/news-card__image-main.css);
+@import url(./__btn-bookmark/news-card__btn-bookmark.css);
+@import url(./__hint-login/news-card__hint-login.css);
+@import url(./__text-hint/news-card__text-hint.css);
+@import url(./__info-block/news-card__info-block.css);
+@import url(./__date/news-card__date.css);
+@import url(./__title/news-card__title.css);
+@import url(./__description/news-card__description.css);
+@import url(./__source/news-card__source.css);
+
+.news-card {
+  height: 576px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
