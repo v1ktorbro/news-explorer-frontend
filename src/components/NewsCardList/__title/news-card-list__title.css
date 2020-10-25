@@ -1,0 +1,9 @@
+.news-card-list__title {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  margin: 0 104px;
+  padding-top: 80px;
+}
