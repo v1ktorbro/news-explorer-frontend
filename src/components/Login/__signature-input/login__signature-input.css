@@ -1,0 +1,12 @@
+@import url(./_email/login__signature-input_emai.css);
+@import url(./_password/login__signature-input_password.css);
+
+.login__signature-input {
+  font-family: 'Inter';
+  font-size: 12px;
+  line-height: 14,52px;
+  color: #2F71E5;
+  display: inline-block;
+  margin-left: 34px;
+  margin-right: 34px;
+}
