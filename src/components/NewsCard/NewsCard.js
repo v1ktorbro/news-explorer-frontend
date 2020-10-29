@@ -5,14 +5,17 @@ const forestImage = require('../../images/news-card_forest.png');
 const parkImage = require('../../images/news-card_park.png');
 const taygaImage = require('../../images/news-card_tayga.png');
 
-function NewsCard() {
+function NewsCard({ savedCard }) {
   return (
     <div className="news-card">
       <div className="news-card__block-image">
         <img src={parkImage} className="news-card__image-main" alt="фото карточки" />
-        <button className="news-card__btn-bookmark" aria-label="bookmark" type="button" />
+        { savedCard && <div className="news-card__keyword-block">
+          <span className="news-card__keyword-text">Природа</span>
+        </div> }
+        <button className={ savedCard ? "news-card__btn-delete" : "news-card__btn-bookmark"} aria-label="bookmark" type="button" />
         <div className="news-card__hint-login news-card__hint-login_closed">
-          <span className="news-card__text-hint">Войдите, чтобы сохранять статьи</span>
+          <span className="news-card__text-hint">{ savedCard ? 'Убрать из сохранённых' : 'Войдите, чтобы сохранять статьи' }</span>
         </div>
       </div>
       <div className="news-card__info-block">
