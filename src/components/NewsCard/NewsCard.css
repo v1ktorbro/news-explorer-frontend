@@ -4,6 +4,8 @@
 @import url(./__btn-delete/news-card__btn-delete.css);
 @import url(./__hint-login/news-card__hint-login.css);
 @import url(./__text-hint/news-card__text-hint.css);
+@import url(./__keyword-block/news-card__keyword-block.css);
+@import url(./__keyword-text/news-card__keyword-text.css);
 @import url(./__info-block/news-card__info-block.css);
 @import url(./__date/news-card__date.css);
 @import url(./__title/news-card__title.css);
@@ -24,23 +26,4 @@
 .news-card:hover {
   box-shadow: 0 14px 28px rgba(8,29,45,0.1), 0 10px 10px rgba(8,29,45,0.1);
   transform: scale(1.02);
-}
-
-.news-card__keyword-block {
-  width: 88px;
-  height: 40px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  display: flex;
-}
-
-.news-card__keyword-text {
-  font-family: 'Roboto';
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  margin: auto;
 }

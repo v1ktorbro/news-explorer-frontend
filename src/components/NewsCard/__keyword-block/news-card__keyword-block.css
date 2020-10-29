@@ -1,0 +1,10 @@
+.news-card__keyword-block {
+  width: 88px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+}
