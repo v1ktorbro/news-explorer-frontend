@@ -5,7 +5,7 @@ import Main from '../Main/Main';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
 import NewsCardList from '../NewsCardList/NewsCardList';
-import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader'
+import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import SavedNews from '../SavedNews/SavedNews';
 
 function App() {
