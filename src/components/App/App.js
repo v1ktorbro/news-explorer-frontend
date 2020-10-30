@@ -11,7 +11,7 @@ import SavedNews from '../SavedNews/SavedNews';
 function App() {
   return (
     <>
-      <Header />
+      <Header onMain />
       <Main />
       <NewsCardList />
       <About />

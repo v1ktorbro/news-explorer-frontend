@@ -3,11 +3,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 
-function Header() {
+function Header({ onMain }) {
   return (
-    <header className="header">
-      <Link to="/" className="header__logo" activeClassName="">NewsExplorer</Link>
-      <Navigation />
+    <header className={onMain ? 'header header_main' : 'header'}>
+      <Link to="/main" className={onMain ? 'header__logo header__logo_main' : 'header__logo'}>NewsExplorer</Link>
+      <Navigation onMain />
     </header>
   );
 }
