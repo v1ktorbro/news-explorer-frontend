@@ -1,5 +1,6 @@
-.navigation__btn-logout {
-  background-color: #ffffff;
+.navigation__btn-login {
+  background-color: transparent;
+  color: #ffffff;
   font-family: 'Roboto';
   display: flex;
   justify-content: center;
@@ -7,17 +8,16 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
-  width: 112px;
+  width: 176px;
   height: 48px;
   border-radius: 100px;
   outline: none;
-  border: 1px solid #1A1B22;
+  border: 1px solid #ffffff;
   margin: 19px 0 13px;
-  padding: 12px 0 12px 19px;
   cursor: pointer;
   transition: all .2s;
 }
 
-.navigation__btn-logout:hover {
+.navigation__btn-login:hover {
   transform: scale(1.05);
 }

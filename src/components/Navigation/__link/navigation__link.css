@@ -1,4 +1,6 @@
 @import url(./_active/navigation__link_active.css);
+@import url(./_active-main/navigation__link_active-main.css);
+@import url(./_main/navigation__link_main.css);
 
 .navigation__link {
   text-decoration: none;
