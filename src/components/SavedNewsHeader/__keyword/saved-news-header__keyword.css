@@ -1,0 +1,9 @@
+.saved-news-header__keyword {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  display: inline-block;
+  margin: 30px auto 56px 104px;
+}
