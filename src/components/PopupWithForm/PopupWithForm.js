@@ -13,6 +13,13 @@ function PopupWithForm({
     }
   };
 
+  const handleEscPopup = (evt) => {
+    if (evt.key === 'Escape') {
+      onClose();
+    }
+  };
+  document.addEventListener('keydown', handleEscPopup);
+
   return (
     <section onClick={overlayPopup} className={`popup popup-${name} ${!isOpen && 'popup_closed'}`}>
       <form className="popup__container">
