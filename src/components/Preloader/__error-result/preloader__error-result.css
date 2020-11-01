@@ -1,0 +1,6 @@
+.preloader__error-result {
+  background-image: url(../../../images/search-result_error.svg);
+  width: 96px;
+  height: 96px;
+  margin: 80px auto 0 auto;
+}

@@ -1,8 +1,7 @@
 .preloader__title {
-  margin: 24px auto 80px auto;
-  font-family: 'Roboto';
+  font-family: 'Roboto Slab';
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  color: #B6BCBF;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 31.5px auto 0 auto;
 }
