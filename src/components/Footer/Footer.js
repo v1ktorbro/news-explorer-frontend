@@ -1,6 +1,6 @@
 import './Footer.css';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const githubIcon = require('../../images/github_icon.svg');
 const facebookIcon = require('../../images/facebook_icon.svg');
@@ -12,7 +12,7 @@ function Footer() {
       <nav className="footer__links footer__links_string">
         <ul className="footer__list">
           <li className="footer__list-item">
-            <Link to="/main" className="footer__link">Главная</Link>
+            <Link to="/#main" className="footer__link">Главная</Link>
           </li>
           <li className="footer__list-item">
             <a href="https://praktikum.yandex.ru/" target="_blank" rel="noopener noreferrer" className="footer__link">Яндекс.Практикум</a>
