@@ -7,8 +7,14 @@ function PopupWithForm({
   name, children, title,
   isOpen, onClose,
 }) {
+  const overlayPopup = (evt) => {
+    if (evt.target.classList.contains(`popup-${name}`)) {
+      onClose();
+    }
+  };
+
   return (
-    <section className={`popup popup-${name} ${!isOpen && 'popup_closed'}`}>
+    <section onClick={overlayPopup} className={`popup popup-${name} ${!isOpen && 'popup_closed'}`}>
       <form className="popup__container">
         <span className="popup__close" onClick={onClose} />
         <h2 className="popup__title">{ title }</h2>
