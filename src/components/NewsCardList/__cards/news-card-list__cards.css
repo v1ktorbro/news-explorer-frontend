@@ -5,3 +5,10 @@
   grid-template-rows: repeat(3, minmax(min-content, max-content));
   grid-gap: 16px;
 }
+
+@media screen and (max-width: 1280px) {
+  .news-card-list__cards {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
