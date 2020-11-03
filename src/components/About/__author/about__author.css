@@ -1,0 +1,11 @@
+.about__author {
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.about__author:last-of-type {
+  margin-top: 24px;
+}
