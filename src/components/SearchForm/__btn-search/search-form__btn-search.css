@@ -24,3 +24,9 @@
 .search-form__btn-search:active {
   background: #2A65CC;
 }
+
+@media screen and (max-width: 1024px) {
+  .search-form__btn-search {
+    height: 50px;
+  }
+}

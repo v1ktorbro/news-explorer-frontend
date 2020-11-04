@@ -7,3 +7,11 @@
   max-width: 530px;
   margin: 28px auto 0 104px;
 }
+
+@media screen and (max-width: 1024px) {
+  .saved-news-header__title {
+    font-size: 36px;
+    line-height: 42px;
+    max-width: 450px;
+  }
+}

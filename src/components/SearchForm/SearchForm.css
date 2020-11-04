@@ -1,3 +1,21 @@
-@import url(./__form/search-form__form.css);
 @import url(./__input/search-form__input.css);
 @import url(./__btn-search/search-form__btn-search.css);
+
+.search-form {
+  margin: 64px auto auto;
+  width: 608px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 100px;
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .search-form {
+    width: 558px;
+    height: 50px;
+    margin-left: 262px;
+    margin-top: 30px;
+  }
+}

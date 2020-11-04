@@ -2,3 +2,10 @@
   margin: 131px auto auto 56px;
   max-width: 600px;
 }
+
+@media screen and (max-width: 1024px) {
+  .about__text {
+    margin-top: 101px;
+    max-width: 500px;
+  }
+}

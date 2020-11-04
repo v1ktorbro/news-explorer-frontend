@@ -10,3 +10,12 @@
     height: 400px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .about__avatar {
+    width: 350px;
+    height: 350px;
+    margin-top: 50px;
+    margin-left: 52px;
+  }
+}

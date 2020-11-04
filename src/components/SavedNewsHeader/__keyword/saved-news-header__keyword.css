@@ -7,3 +7,11 @@
   display: inline-block;
   margin: 30px auto 56px 104px;
 }
+
+@media screen and (max-width: 1024px) {
+  .saved-news-header__keyword {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 6px;
+  }
+}

@@ -6,3 +6,10 @@
   font-weight: 400;
   color: #B6BCBF;
 }
+
+@media screen and (max-width: 1024px) {
+  .footer__signature {
+    font-size: 13px;
+    line-height: 19px;
+  }
+}

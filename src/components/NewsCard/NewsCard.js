@@ -10,10 +10,12 @@ function NewsCard({ savedCard }) {
     <div className="news-card">
       <div className="news-card__block-image">
         <img src={parkImage} className="news-card__image-main" alt="фото карточки" />
-        { savedCard && <div className="news-card__keyword-block">
+        { savedCard && (
+        <div className="news-card__keyword-block">
           <span className="news-card__keyword-text">Природа</span>
-        </div> }
-        <button className={ savedCard ? "news-card__btn-delete" : "news-card__btn-bookmark" } aria-label="bookmark" type="button" />
+        </div>
+        ) }
+        <button className={savedCard ? 'news-card__btn-delete' : 'news-card__btn-bookmark'} aria-label="bookmark" type="button" />
         <div className="news-card__hint-login news-card__hint-login_closed">
           <span className="news-card__text-hint">{ savedCard ? 'Убрать из сохранённых' : 'Войдите, чтобы сохранять статьи' }</span>
         </div>

@@ -7,3 +7,10 @@
   left: 24px;
   display: flex;
 }
+
+@media screen and (max-width: 1024px) {
+  .news-card__keyword-block {
+    height: 30px;
+    left: 30px;
+  }
+}

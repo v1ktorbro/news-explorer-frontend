@@ -21,3 +21,14 @@
 .navigation__btn-logout:hover {
   transform: scale(1.05);
 }
+
+@media screen and (max-width: 1024px) {
+  .navigation__btn-logout {
+    font-size: 16px;
+    line-height: 22px;
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
