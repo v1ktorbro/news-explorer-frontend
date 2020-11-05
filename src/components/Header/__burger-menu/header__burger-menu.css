@@ -1,0 +1,32 @@
+@import url(./_active/header__burger-menu_active.css);
+
+.header__burger-menu {
+  position: relative;
+  width: 0;
+  height: 0;
+  margin-top: 28px;
+  margin-right: 36px;
+  background-color: #fff;
+}
+
+.header__burger-menu::before {
+  position: absolute;
+  content: '';
+  top: 4px;
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: #fff;
+  transition: transform .2s ease, top .2s linear;
+}
+
+.header__burger-menu::after {
+  position: absolute;
+  content: '';
+  top: -4px;
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: #fff;
+  transition: transform .2s ease, top .2s linear;
+}
