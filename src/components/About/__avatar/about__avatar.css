@@ -19,3 +19,12 @@
     margin-left: 52px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .about__avatar {
+    height: 232px;
+    width: 232px;
+    margin-top: 61px;
+    margin-left: 40px;
+  }
+}

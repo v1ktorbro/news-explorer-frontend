@@ -17,3 +17,9 @@
   transform: scale(1.15);
   opacity: .7;
 }
+
+@media screen and (max-width: 768px) {
+  .footer__list-item:first-of-type {
+    margin-right: 24px;
+  }
+}

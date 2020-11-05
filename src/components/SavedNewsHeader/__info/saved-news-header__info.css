@@ -7,3 +7,11 @@
   display: inline-block;
   margin: 40px auto 0 104px;
 }
+
+@media screen and (max-width: 768px) {
+  .saved-news-header__info {
+    margin-left: 40px;
+    margin-top: 24px;
+    font-size: 14px;
+  }
+}

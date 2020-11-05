@@ -1,3 +1,9 @@
 .footer__links_social-icons {
   margin-right: 104px
 }
+
+@media screen and (max-width: 768px) {
+  .footer__links_social-icons {
+    margin-right: 41px;
+  }
+}

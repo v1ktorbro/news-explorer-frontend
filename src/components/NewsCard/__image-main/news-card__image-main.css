@@ -4,3 +4,9 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+
+@media screen and (max-width: 768px) {
+  .news-card__image-main {
+    height: 150px;
+  }
+}

@@ -8,3 +8,9 @@
   justify-content: flex-end;
   margin-right: 104px;
 }
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    margin-right: 40px;
+  }
+}

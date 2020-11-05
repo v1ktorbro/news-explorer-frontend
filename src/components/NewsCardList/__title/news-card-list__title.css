@@ -15,3 +15,10 @@
     margin: 0 49px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .news-card-list__title {
+    padding-top: 40px;
+    margin-left: 40px;
+  }
+}

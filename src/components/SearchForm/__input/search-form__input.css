@@ -11,3 +11,9 @@
   padding-right: calc(168px + 10px); /* ширина btn-search + 10px чтобы при переполнении инпута текст не пропадал */
   z-index: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .search-form__input {
+    padding-right: calc(160px + 10px)
+  }
+}
