@@ -26,3 +26,10 @@
     height: 354px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .about {
+    flex-direction: column;
+    height: 752px;
+  }
+}

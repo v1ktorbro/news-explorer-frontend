@@ -13,3 +13,9 @@
     line-height: 24px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .news-card__title {
+    line-height: 26px;
+  }
+}

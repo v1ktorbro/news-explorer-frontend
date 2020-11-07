@@ -1,6 +1,15 @@
+@import url(./_social-icons/footer__list_social-icons.css);
+@import url(./_string/footer__list_string.css);
+
 .footer__list {
   align-self: center;
   display: flex;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 320px) {
+  .footer__list {
+    position: absolute;
+  }
 }

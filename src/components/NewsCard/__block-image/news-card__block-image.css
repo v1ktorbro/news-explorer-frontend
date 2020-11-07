@@ -4,3 +4,15 @@
   margin: 0;
   padding: 0;
 }
+
+@media scren and (max-width: 768px) {
+  .news-card__block-image {
+    height: 150px;
+  }
+}
+
+@media scren and (max-width: 320px) {
+  .news-card__block-image {
+    height: 196px;
+  }
+}

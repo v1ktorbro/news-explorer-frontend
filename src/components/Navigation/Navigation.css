@@ -2,6 +2,8 @@
 @import url(./__btn-logout/navigation__btn-logout.css);
 @import url(./__btn-login/navigation__btn-login.css);
 @import url(./__image-logout/navigation__image-logout.css);
+@import url(./_black-blind/navigation_black-blind.css);
+@import url(./_open-blind/navigation_open-blind.css);
 
 .navigation {
   display: flex;
@@ -12,5 +14,17 @@
 @media screen and (max-width: 768px) {
   .navigation {
     margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navigation {
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 56px;
+    margin: 0;
+    width: 100%;
+    display: none;
   }
 }

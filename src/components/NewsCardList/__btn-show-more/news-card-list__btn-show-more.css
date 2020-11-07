@@ -27,3 +27,10 @@
     margin-bottom: 57px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .news-card-list__btn-show-more {
+    width: 288px;
+    margin-bottom: 32px;
+  }
+}

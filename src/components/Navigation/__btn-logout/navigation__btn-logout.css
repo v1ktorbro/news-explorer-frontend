@@ -32,3 +32,11 @@
     margin-bottom: 10px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .navigation__btn-logout {
+    width: 288px;
+    height: 56px;
+    margin: 24px 16px;
+  }
+}

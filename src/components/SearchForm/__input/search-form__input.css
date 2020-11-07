@@ -17,3 +17,13 @@
     padding-right: calc(160px + 10px)
   }
 }
+
+@media screen and (max-width: 320px) {
+  .search-form__input {
+    height: 56px;
+    width: calc(288px - 32px); /* ширина кнопки и padding левый, правый  */
+    margin-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

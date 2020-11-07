@@ -11,3 +11,10 @@
     padding: 32px 40px 22px 40px;
   }
 }
+@media screen and (max-width: 320px) {
+  .saved-news {
+    grid-template-columns: minmax(min-content, max-content);
+    padding: 24px 16px;
+    grid-gap: 10px;
+  }
+}

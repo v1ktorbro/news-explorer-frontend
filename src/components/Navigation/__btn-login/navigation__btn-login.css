@@ -21,3 +21,11 @@
 .navigation__btn-login:hover {
   transform: scale(1.05);
 }
+
+@media screen and (max-width: 320px) {
+  .navigation__btn-login {
+    width: 288px;
+    height: 56px;
+    margin: 24px 16px;
+  }
+}

@@ -14,3 +14,10 @@
     left: 30px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .news-card__keyword-block {
+    width: 88px;
+    height: 40px;
+  }
+}

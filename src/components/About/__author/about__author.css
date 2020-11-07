@@ -16,3 +16,10 @@
     line-height: 22px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .about__author {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

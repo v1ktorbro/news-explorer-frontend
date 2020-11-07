@@ -1,0 +1,12 @@
+
+.header__burger-menu_main {
+  background-color: #ffffff !important;
+}
+
+.header__burger-menu_main::before {
+  background-color: #ffffff !important;
+}
+
+.header__burger-menu_main::after {
+  background-color: #ffffff !important;
+}

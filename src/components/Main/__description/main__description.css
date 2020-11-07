@@ -19,7 +19,6 @@
   .main__description {
     margin-top: 28px;
     margin-left: 262px;
-    font-style: 15px;
     line-height: 22px;
   }
 }
@@ -29,5 +28,14 @@
     line-height: 24px;
     margin-left: 160px;
     max-width: 452px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main__description {
+    max-width: 288px;
+    max-height: 72px;
+    margin-left: 16px;
+    margin-top: 16px;
   }
 }

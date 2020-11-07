@@ -14,3 +14,10 @@
     line-height: 21px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .news-card__keyword-text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

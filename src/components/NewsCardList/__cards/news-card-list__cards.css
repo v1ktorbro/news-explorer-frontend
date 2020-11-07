@@ -25,3 +25,11 @@
     grid-gap: 8px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .news-card-list__cards {
+    grid-template-columns: minmax(min-content, max-content);
+    margin: 24px 16px 15px 16px;
+    grid-gap: 10px;
+  }
+}

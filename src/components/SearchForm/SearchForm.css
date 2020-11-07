@@ -27,3 +27,12 @@
     margin: 48px auto 48px 160px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .search-form {
+    width: 288px;
+    margin: 122px auto 32px 16px;
+    flex-direction: column;
+    height: auto;
+  }
+}

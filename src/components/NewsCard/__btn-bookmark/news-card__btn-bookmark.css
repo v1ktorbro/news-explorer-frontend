@@ -27,3 +27,10 @@
     top: 8px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .news-card__btn-bookmark {
+    right: 16px;
+    top: 16px;
+  }
+}

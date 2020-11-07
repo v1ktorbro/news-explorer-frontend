@@ -27,3 +27,10 @@
     margin-left: 163px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .main__title {
+    margin-top: 86px;
+    margin-left: 19px;
+  }
+}

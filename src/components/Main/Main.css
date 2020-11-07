@@ -29,3 +29,11 @@
     height: 400px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .main {
+    background-image: url(../../images/main_320px.png);
+    width: 320px;
+    height: 536px;
+  }
+}

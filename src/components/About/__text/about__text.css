@@ -15,6 +15,11 @@
     margin-top: 40px;
     margin-left: 32px;
     max-width: 424px;
-    max-height: 192px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about__text {
+    margin: 24px 16px 80px 16px;
   }
 }

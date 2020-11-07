@@ -1,5 +1,7 @@
 @import url(./__logo/header__logo.css);
+@import url(./__burger-menu/header__burger-menu.css);
 @import url(./_main/header_main.css);
+@import url(./_state-blind/header_state-blind.css);
 
 .header {
   max-height: 79px;
@@ -26,5 +28,12 @@
   .header {
     max-width: 768px;
     max-height: 65px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    max-width: 320px;
+    max-height: 55px;
   }
 }

@@ -22,3 +22,12 @@
     margin: 16px auto 32px 40px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .saved-news-header__keyword {
+    font-size: 16px;
+    margin: 16px 16px 32px;
+    max-width: 288px;
+    max-height: 48px;
+  }
+}

@@ -29,3 +29,11 @@
     right: 30px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .news-card__btn-delete {
+    width: 40px;
+    height: 40px;
+    background-size: 24px 24px;
+  }
+}
