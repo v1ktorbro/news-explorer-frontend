@@ -30,6 +30,15 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .news-card__btn-delete {
+    width: 45px;
+    height: 45px;
+    right: 20px;
+    top: 20px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .news-card__btn-delete {
     width: 40px;

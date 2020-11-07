@@ -3,7 +3,7 @@
   border-bottom: 3px solid #ffffff !important;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .navigation__link_active-main {
     border-bottom: none !important;
   }

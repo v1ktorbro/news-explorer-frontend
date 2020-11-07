@@ -18,6 +18,13 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .about__text {
+    max-width: 300px;
+    margin: 30px auto 60px auto;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .about__text {
     margin: 24px 16px 80px 16px;

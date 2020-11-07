@@ -28,9 +28,19 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .news-card-list__btn-show-more {
+    width: 345px;
+    height: 65px;
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .news-card-list__btn-show-more {
+    height: 56px;
     width: 288px;
+    margin-top: 0;
     margin-bottom: 32px;
   }
 }

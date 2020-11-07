@@ -31,6 +31,13 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .header {
+    max-width: 425px;
+    max-height: 59px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .header {
     max-width: 320px;

@@ -30,9 +30,16 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .main {
     background-image: url(../../images/main_320px.png);
+    width: 425px;
+    height: 490px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main {
     width: 320px;
     height: 536px;
   }

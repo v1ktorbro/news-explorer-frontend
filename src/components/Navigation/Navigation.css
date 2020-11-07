@@ -17,14 +17,14 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .navigation {
     flex-direction: column;
     background-color: #ffffff;
     position: absolute;
-    top: 56px;
     margin: 0;
     width: 100%;
     display: none;
+    top: 56px;
   }
 }
