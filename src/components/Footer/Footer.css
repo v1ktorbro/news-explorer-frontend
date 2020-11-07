@@ -23,5 +23,6 @@
     position: relative;
     flex-direction: column-reverse;
     height: 176px;
+    max-width: 320px;
   }
 }

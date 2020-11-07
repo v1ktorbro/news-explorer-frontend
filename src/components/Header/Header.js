@@ -6,7 +6,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Header({ onMain, children }) {
-
   const toggleBurgerMenu = () => {
     const headerOnMain = document.querySelector('.header_main');
     const navigation = document.querySelector('.navigation');

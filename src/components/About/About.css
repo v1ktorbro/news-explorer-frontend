@@ -31,5 +31,6 @@
   .about {
     flex-direction: column;
     height: 752px;
+    max-width: 320px;
   }
 }
