@@ -18,15 +18,14 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 560px) {
   .about__text {
-    max-width: 300px;
-    margin: 30px auto 60px auto;
+    margin: 30px auto 19px auto;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .about__text {
-    margin: 24px 16px 80px 16px;
+    margin: 24px auto 80px auto;
   }
 }

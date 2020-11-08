@@ -28,6 +28,14 @@
   }
 }
 
+@media screen and (max-width: 560px) {
+  .news-card-list__btn-show-more {
+    width: 420px;
+    height: 75px;
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .news-card-list__btn-show-more {
     width: 345px;

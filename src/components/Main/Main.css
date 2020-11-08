@@ -30,9 +30,24 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 560px) {
   .main {
     background-image: url(../../images/main_320px.png);
+    max-width: 560px;
+    height: 490px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    background-image: url(../../images/main_320px.png);
+    max-width: 480px;
+    height: 490px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main {
     width: 425px;
     height: 490px;
   }

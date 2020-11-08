@@ -37,6 +37,12 @@
   }
 }
 
+@media screen and (max-width: 560px) {
+  .search-form__btn-search {
+    height: 60px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .search-form__btn-search {
     position: static;

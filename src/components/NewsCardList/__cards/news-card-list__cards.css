@@ -26,10 +26,18 @@
   }
 }
 
+@media screen and (max-width: 560px) {
+  .news-card-list__cards {
+    grid-template-columns: repeat(2, 1fr );
+    grid-gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .news-card-list__cards {
     grid-template-columns: 1fr;
-    grid-gap: 10px;
   }
 }
 

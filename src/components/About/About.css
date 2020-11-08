@@ -27,10 +27,15 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 560px) {
   .about {
     flex-direction: column;
-    height: 752px;
+    height: 820px;
+  }
+}
 
+@media screen and (max-width: 425px) {
+  .about {
+    height: 752px;
   }
 }

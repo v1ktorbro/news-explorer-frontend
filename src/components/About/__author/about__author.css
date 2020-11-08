@@ -17,6 +17,13 @@
   }
 }
 
+@media screen and (max-width: 560px) {
+  .about__author {
+    font-size: 19px;
+    line-height: 26px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .about__author {
     font-size: 18px;

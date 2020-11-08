@@ -18,10 +18,17 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 560px) {
   .footer {
     position: relative;
     flex-direction: column-reverse;
+    height: 130px;
+    max-width: 560px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer {
     height: 200px;
     max-width: 425px;
   }

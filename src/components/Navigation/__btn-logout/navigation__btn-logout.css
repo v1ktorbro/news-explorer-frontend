@@ -33,6 +33,16 @@
   }
 }
 
+@media screen and (max-width: 560px) {
+  .navigation__btn-logout {
+    width: 230px;
+    height: 56px;
+    margin-left: 40px;
+    margin-top: 38px;
+    margin-bottom: 20px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .navigation__btn-logout {
     width: 345px;

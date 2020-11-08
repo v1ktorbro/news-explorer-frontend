@@ -42,6 +42,27 @@
   }
 }
 
+@media screen and (max-width: 560px) {
+  .news-card {
+    max-width: 240px;
+    height: 440px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .news-card {
+    max-width: 220px;
+    height: 410px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .news-card {
+    max-width: 200px;
+    height: 410px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .news-card {
     max-width: 345px;

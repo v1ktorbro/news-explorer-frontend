@@ -9,7 +9,14 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 560px) {
+  .about__description {
+    height: 330px;
+    width: 330px;
+  }
+}
+
+@media screen and (max-width: 425px) {
   .about__description {
     height: 288px;
     width: 288px;
