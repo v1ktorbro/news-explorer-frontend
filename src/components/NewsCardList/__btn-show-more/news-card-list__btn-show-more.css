@@ -36,6 +36,12 @@
   }
 }
 
+@media screen and (max-width: 375px) {
+  .news-card-list__btn-show-more:hover {
+    transform: scale(1.05);
+  }
+}
+
 @media screen and (max-width: 320px) {
   .news-card-list__btn-show-more {
     height: 56px;

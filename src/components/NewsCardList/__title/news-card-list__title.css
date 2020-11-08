@@ -23,6 +23,13 @@
   }
 }
 
+@media screen and (max-width: 375px) {
+  .news-card-list__title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .news-card-list__title {
     padding-top: 32px;

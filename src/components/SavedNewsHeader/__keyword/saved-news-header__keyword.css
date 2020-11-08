@@ -23,11 +23,19 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .saved-news-header__keyword {
     font-size: 16px;
-    margin: 16px 16px 32px;
-    max-width: 288px;
+    margin-top: 16px;
+    margin-left: 30px;
     max-height: 48px;
+    max-width: 320px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .saved-news-header__keyword {
+    margin-left: 16px;
+    max-width: 288px;
   }
 }

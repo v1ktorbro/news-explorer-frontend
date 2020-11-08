@@ -49,7 +49,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .news-card {
     max-width: 300px;
   }

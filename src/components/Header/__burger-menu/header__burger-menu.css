@@ -31,3 +31,15 @@
   background-color: #000000;
   transition: transform .2s ease, top .2s linear;
 }
+
+@media screen and (max-width: 375px) {
+  .header__burger-menu {
+    margin-right: 46px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__burger-menu {
+    margin-right: 36px;
+  }
+}

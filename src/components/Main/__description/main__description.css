@@ -39,10 +39,16 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .main__description {
     max-width: 288px;
-    margin-left: 16px;
+    margin-left: 30px;
     margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main__description {
+    margin-left: 16px;
   }
 }

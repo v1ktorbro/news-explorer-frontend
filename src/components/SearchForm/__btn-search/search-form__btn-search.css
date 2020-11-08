@@ -44,7 +44,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .search-form__btn-search {
     width: 288px;
   }

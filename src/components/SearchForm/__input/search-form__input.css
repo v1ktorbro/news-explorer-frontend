@@ -28,7 +28,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .search-form__input {
     height: 56px;
     width: calc(288px - 32px); /* ширина кнопки и padding левый, правый  */
