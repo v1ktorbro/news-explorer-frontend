@@ -28,6 +28,14 @@
   }
 }
 
+@media screen and (max-width: 680px) {
+  .main__title {
+    margin-top: 106px;
+    margin-left: 70px;
+    max-width: 680px;
+  }
+}
+
 @media screen and (max-width: 560px) {
   .main__title {
     margin-top: 126px;

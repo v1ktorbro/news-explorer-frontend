@@ -23,8 +23,22 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 680px) {
   .footer__signature {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer__signature {
+    width: 300px;
     margin: 30px 16px 22px;
+    font-size: 16px;
+    line-height: 22px;
   }
 }

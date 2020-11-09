@@ -7,3 +7,15 @@
     margin-right: 41px;
   }
 }
+
+@media screen and (max-width: 680px) {
+  .footer__links_social-icons {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer__links_social-icons {
+    margin-right: 41px;
+  }
+}

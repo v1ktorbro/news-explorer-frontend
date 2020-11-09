@@ -19,3 +19,17 @@
     height: 22px;
   }
 }
+
+@media screen and (max-width: 680px) {
+  .footer__social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer__social-icon {
+    width: 22px;
+    height: 22px;
+  }
+}

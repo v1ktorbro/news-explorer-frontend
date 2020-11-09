@@ -24,6 +24,18 @@
   }
 }
 
+@media screen and (max-width: 680px) {
+  .footer__list-item:first-of-type {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer__list-item:first-of-type {
+    margin-right: 24px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .footer__list-item:first-of-type {
     margin-right: 28px;

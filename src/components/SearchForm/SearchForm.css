@@ -28,6 +28,14 @@
   }
 }
 
+@media screen and (max-width: 680px) {
+  .search-form {
+    height: 60px;
+    margin-left: 70px;
+    margin-top: 43px;
+  }
+}
+
 @media screen and (max-width: 560px) {
   .search-form {
     width: 410px;

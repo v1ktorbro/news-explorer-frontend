@@ -28,11 +28,20 @@
   }
 }
 
+@media screen and (max-width: 680px) {
+  .news-card-list__btn-show-more {
+    height: 56px;
+    margin-bottom: 37px;
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 560px) {
   .news-card-list__btn-show-more {
     width: 420px;
     height: 75px;
     margin-top: 20px;
+    margin-bottom: 57px;
   }
 }
 
@@ -45,6 +54,9 @@
 }
 
 @media screen and (max-width: 375px) {
+  .news-card-list__btn-show-more {
+    width: 300px;
+  }
   .news-card-list__btn-show-more:hover {
     transform: scale(1.05);
   }

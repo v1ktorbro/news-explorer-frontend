@@ -1,35 +1,37 @@
 @import url(./_active/header__burger-menu_active.css);
 @import url(./_main/header__burger-menu_main.css);
 
-.header__burger-menu {
-  position: relative;
-  width: 0;
-  height: 0;
-  margin-top: 28px;
-  margin-right: 36px;
-  background-color: #000000;
-}
+@media screen and (max-width: 560px) {
+  .header__burger-menu {
+    position: relative;
+    width: 0;
+    height: 0;
+    margin-top: 28px;
+    margin-right: 36px;
+    background-color: #000000;
+  }
 
-.header__burger-menu::before {
-  position: absolute;
-  content: '';
-  top: 4px;
-  display: block;
-  width: 16px;
-  height: 2px;
-  background-color: #000000;
-  transition: transform .2s ease, top .2s linear;
-}
+  .header__burger-menu::before {
+    position: absolute;
+    content: '';
+    top: 4px;
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: #000000;
+    transition: transform .2s ease, top .2s linear;
+  }
 
-.header__burger-menu::after {
-  position: absolute;
-  content: '';
-  top: -4px;
-  display: block;
-  width: 16px;
-  height: 2px;
-  background-color: #000000;
-  transition: transform .2s ease, top .2s linear;
+  .header__burger-menu::after {
+    position: absolute;
+    content: '';
+    top: -4px;
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: #000000;
+    transition: transform .2s ease, top .2s linear;
+  }
 }
 
 @media screen and (max-width: 375px) {
