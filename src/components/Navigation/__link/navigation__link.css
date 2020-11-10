@@ -26,6 +26,15 @@
   }
 }
 
+@media screen and (max-width: 830px) {
+  .navigation__link {
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 16px;
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   .navigation__link {
     line-height: 24px;

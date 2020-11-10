@@ -18,7 +18,7 @@
   opacity: .7;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 830px) {
   .footer__list-item:first-of-type {
     margin-right: 24px;
   }

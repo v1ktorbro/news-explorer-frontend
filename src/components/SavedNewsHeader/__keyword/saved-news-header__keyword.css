@@ -16,7 +16,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 830px) {
   .saved-news-header__keyword {
     font-size: 14px;
     margin: 16px auto 32px 40px;

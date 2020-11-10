@@ -18,6 +18,12 @@
   }
 }
 
+@media screen and (max-width: 830px) {
+  .main__title {
+    margin-left: 160px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .main__title {
     font-size: 36px;

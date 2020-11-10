@@ -20,7 +20,16 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 940px) {
+  .about__avatar {
+    height: 300px;
+    width: 300px;
+    margin-top: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 830px) {
   .about__avatar {
     height: 232px;
     width: 232px;

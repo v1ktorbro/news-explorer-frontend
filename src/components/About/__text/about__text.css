@@ -10,11 +10,18 @@
   }
 }
 
+@media screen and (max-width: 940px) {
+  .about__text {
+    margin-top: auto;
+    margin-left: auto;
+    max-width: 424px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .about__text {
     margin-top: 40px;
     margin-left: 32px;
-    max-width: 424px;
   }
 }
 

@@ -21,6 +21,13 @@
   transform: scale(1.1);
 }
 
+@media screen and (max-width: 830px) {
+  .news-card__btn-bookmark {
+    right: 14px;
+    top: 14px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .news-card__btn-bookmark {
     right: 8px;
