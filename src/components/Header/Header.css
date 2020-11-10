@@ -24,10 +24,16 @@
   }
 }
 
+@media screen and (max-width: 930px) {
+  .header {
+    max-width: 930px;
+    max-height: 65px;
+  }
+}
+
 @media screen and (max-width: 830px) {
   .header {
     max-width: 830px;
-    max-height: 65px;
   }
 }
 

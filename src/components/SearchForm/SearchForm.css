@@ -20,11 +20,17 @@
   }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 930px) {
   .search-form {
     width: 448px;
     height: 56px;
-    margin: 30px auto 48px 160px;
+    margin: 30px auto 48px 215px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .search-form {
+    margin-left: 160px;
   }
 }
 

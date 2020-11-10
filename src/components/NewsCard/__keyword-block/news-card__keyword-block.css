@@ -8,13 +8,6 @@
   display: flex;
 }
 
-@media screen and (max-width: 1024px) {
-  .news-card__keyword-block {
-    height: 30px;
-    left: 30px;
-  }
-}
-
 @media screen and (max-width: 425px) {
   .news-card__keyword-block {
     width: 110px;

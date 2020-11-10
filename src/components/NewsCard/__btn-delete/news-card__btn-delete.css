@@ -21,15 +21,6 @@
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 1024px) {
-  .news-card__btn-delete {
-    width: 30px;
-    height: 30px;
-    background-size: 19px 19px;
-    right: 30px;
-  }
-}
-
 @media screen and (max-width: 425px) {
   .news-card__btn-delete {
     width: 45px;

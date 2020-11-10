@@ -23,10 +23,16 @@
   }
 }
 
+@media screen and (max-width: 930px) {
+  .main {
+    max-width: 930px;
+    height: 400px;
+  }
+}
+
 @media screen and (max-width: 830px) {
   .main {
     max-width: 830px;
-    height: 400px;
   }
 }
 
