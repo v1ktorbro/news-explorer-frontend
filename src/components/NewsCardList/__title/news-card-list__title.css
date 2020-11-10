@@ -6,7 +6,6 @@
   color: #1A1B22;
   margin: 0 104px;
   padding-top: 80px;
-  max-width: 320px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -33,6 +32,7 @@
 
 @media screen and (max-width: 320px) {
   .news-card-list__title {
+    max-width: 250px;
     padding-top: 32px;
     margin-left: 16px;
   }

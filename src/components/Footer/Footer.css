@@ -22,7 +22,7 @@
   .footer {
     position: relative;
     flex-direction: column-reverse;
-    height: 130px;
+    height: 150px;
     max-width: 560px;
   }
 }

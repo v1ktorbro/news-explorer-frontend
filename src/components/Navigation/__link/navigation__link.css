@@ -13,10 +13,6 @@
   cursor: pointer;
 }
 
-.navigation__link:last-of-type {
-  width: 160px;
-}
-
 @media screen and (max-width: 1024px) {
   .navigation__link {
     font-size: 16px;

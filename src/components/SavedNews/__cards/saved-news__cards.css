@@ -1,6 +1,7 @@
 .saved-news__cards {
   margin: 62px 104px;
   display: grid;
+  justify-content: space-evenly;
   grid-template-columns: repeat(3, minmax(min-content, max-content));
   gap: 16px;
 }
