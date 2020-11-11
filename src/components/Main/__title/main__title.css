@@ -1,5 +1,7 @@
 .main__title {
-  margin: 160px auto 0;
+  margin-top: 160px;
+  margin-bottom: 0;
+  margin-left: 416px;
   max-width: 608px;
   max-height: 128px;
   color: #ffffff;
@@ -9,12 +11,28 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 1280px) {
+  .main__title {
+    font-size: 46px;
+    line-height: 48px;
+    max-width: 500px;
+    margin-left: 253px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .main__title {
     font-size: 46px;
     line-height: 48px;
     max-width: 500px;
     margin-top: 110px;
+    margin-left: 163px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .main__title {
+    margin-left: 215px;
   }
 }
 

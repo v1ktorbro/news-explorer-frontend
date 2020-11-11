@@ -27,7 +27,7 @@
 
 @media screen and (max-width: 1024px) {
   .search-form__btn-search {
-    height: 50px;
+    height: 64px;
   }
 }
 
@@ -43,14 +43,14 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 455px) {
   .search-form__btn-search {
     position: static;
     width: 345px;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 400px) {
   .search-form__btn-search {
     width: 288px;
   }

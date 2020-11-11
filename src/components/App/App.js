@@ -45,7 +45,7 @@ function App() {
           onLogin={handleLoginPopup}
         />
         <Header onMain>
-          <Navigation onMain onLogin={handleLoginPopup} />
+          <Navigation onMain loggedIn onLogin={handleLoginPopup} />
         </Header>
         <Main />
         <NewsCardList />

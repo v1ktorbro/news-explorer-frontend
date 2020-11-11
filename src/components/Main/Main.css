@@ -3,97 +3,41 @@
 
 .main {
   background-image: url(../../images/main.png);
-  width: 1440px;
+  width: 100%;
   height: 576px;
   display: flex;
   flex-direction: column;
   background-size: cover;
 }
 
-@media screen and (max-width: 1280px) {
-  .main {
-    max-width: 1280px;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .main {
-    max-width: 1100px;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .main {
-    max-width: 1024px;
     height: 410px;
   }
 }
 
 @media screen and (max-width: 930px) {
   .main {
-    max-width: 930px;
     height: 400px;
-  }
-}
-
-@media screen and (max-width: 830px) {
-  .main {
-    max-width: 830px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .main {
-    max-width: 768px;
   }
 }
 
 @media screen and (max-width: 680px) {
   .main {
-    max-width: 680px;
     height: 365px;
   }
 }
 
-@media screen and (max-width: 630px) {
-  .main {
-    max-width: 630px;
-  }
-}
 
 @media screen and (max-width: 560px) {
   .main {
     background-image: url(../../images/main_320px.png);
-    max-width: 560px;
     height: 490px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .main {
-    background-image: url(../../images/main_320px.png);
-    max-width: 480px;
-    height: 490px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .main {
-    width: 425px;
-    height: 490px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .main {
-    width: 375px;
-    height: 500px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .main {
-    width: 320px;
     height: 536px;
   }
 }

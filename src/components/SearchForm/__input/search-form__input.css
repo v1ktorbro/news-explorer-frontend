@@ -18,7 +18,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 455px) {
   .search-form__input {
     height: 56px;
     width: calc(345px - 40px);
@@ -28,7 +28,7 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 400px) {
   .search-form__input {
     height: 56px;
     width: calc(288px - 32px); /* ширина кнопки и padding левый, правый  */
