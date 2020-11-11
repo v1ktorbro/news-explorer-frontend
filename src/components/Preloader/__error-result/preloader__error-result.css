@@ -3,4 +3,25 @@
   width: 96px;
   height: 96px;
   margin: 80px auto 0 auto;
+  background-size: contain;
+}
+
+@media screen and (max-width: 1280px) {
+  .preloader__error-result {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .preloader__error-result {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .preloader__error-result {
+    width: 60px;
+    height: 60px;
+  }
 }

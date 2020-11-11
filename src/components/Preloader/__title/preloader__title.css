@@ -6,3 +6,19 @@
   margin: 31.5px auto 0 auto;
   color: #1A1B22;
 }
+
+@media screen and (max-width: 830px) {
+  .preloader__title {
+    font-size: 22px;
+    line-height: 26px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .preloader__title {
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: 15px;
+  }
+}
