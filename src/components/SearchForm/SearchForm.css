@@ -1,4 +1,5 @@
 @import url(./__input/search-form__input.css);
+@import url(./__input-error/search-form__input-error.css);
 @import url(./__btn-search/search-form__btn-search.css);
 
 .search-form {
@@ -26,7 +27,6 @@
     margin-left: 163px;
   }
 }
-
 
 @media screen and (max-width: 930px) {
   .search-form {

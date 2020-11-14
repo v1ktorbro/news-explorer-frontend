@@ -1,0 +1,8 @@
+.search-form__btn-search_inactive {
+  cursor: not-allowed;
+  background-color: #808080 ;
+}
+
+.search-form__btn-search_inactive:hover {
+  background-color: rgba(128, 128, 128, .8);
+}

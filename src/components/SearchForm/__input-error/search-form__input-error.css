@@ -1,0 +1,43 @@
+@import url(./_active/search-form__input-error_active.css);
+
+.search-form__input-error {
+  position: absolute;
+  padding-left: 3px;
+  padding-right: 3px;
+  display: none;
+  top: 42px;
+  left: 26px;
+  color: red;
+  font-size: 12px;
+  line-height: 14px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1280px) {
+  .search-form__input-error {
+    top: 65px;
+    left: 16px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .search-form__input-error {
+    top: 57px;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-form__input-error {
+    top: 62px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .search-form__input-error {
+    top: -31px;
+    max-width: 300px;
+  }
+}
