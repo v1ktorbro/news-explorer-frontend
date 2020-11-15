@@ -1,5 +1,6 @@
 import './SearchForm.css';
 import React from 'react';
+import newsApi from '../../utils/NewsApi';
 
 function SearchForm() {
 
@@ -10,6 +11,7 @@ function SearchForm() {
     evt.preventDefault();
     const btnSubmitForm = document.querySelector('.search-form__btn-search');
     console.log('произошел сабмит данных:', inputValue);
+    newsApi.getResultSearch(inputValue);
     btnSubmitForm.disabled = true;
   };
 
