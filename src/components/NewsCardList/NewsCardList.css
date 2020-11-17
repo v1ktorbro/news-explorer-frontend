@@ -1,4 +1,5 @@
 @import url(./__title/news-card-list__title.css);
+@import url(./__description-error/news-card-list__description-error.css);
 @import url(./__cards/news-card-list__cards.css);
 @import url(./__btn-show-more/news-card-list__btn-show-more.css);
 
