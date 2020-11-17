@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import './App.css';
 import React from 'react';
 import { Route } from 'react-router-dom';
@@ -11,8 +12,12 @@ import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import SavedNews from '../SavedNews/SavedNews';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
+import Preloader from '../Preloader/Preloader';
+import newsApi from '../../utils/NewsApi';
 
 function App() {
+  const [isSearchingNews, setIsSearcinghNews] = React.useState(false);
+  const [isNothingSearch, setIsNothingSearch] = React.useState(false);
   const [isNewsSearchSuccess, setIsNewsSearchSuccess] = React.useState(false);
   const [isNewsSearchError, setIsNewsSearchError] = React.useState(false);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
@@ -33,6 +38,29 @@ function App() {
     setIsRegisterPopupOpen(false);
   };
 
+  const handleSearchNewsSubmit = (requestWord) => {
+    setIsSearcinghNews(true);
+    setIsNewsSearchSuccess(false);
+    setIsNothingSearch(false);
+    setIsNewsSearchError(false);
+    newsApi.getResultSearch(requestWord)
+      .then((res) => {
+        if (res.status === 'ok') {
+          setIsSearcinghNews(false);
+          setIsNewsSearchSuccess(true);
+        } else {
+          setIsNewsSearchError(true);
+          setIsSearcinghNews(false);
+        }
+        if (res.totalResults === 0) {
+          setIsNothingSearch(true);
+          setIsNewsSearchSuccess(false);
+        }
+      }).catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <Route exact path="/">
@@ -50,9 +78,10 @@ function App() {
           <Navigation onMain loggedIn onLogin={handleLoginPopup} />
         </Header>
         <Main
-          setIsNewsSearchSuccess={setIsNewsSearchSuccess}
-          setIsNewsSearchError={setIsNewsSearchError}
+          onSearchNews={handleSearchNewsSubmit}
         />
+        {isSearchingNews ? <Preloader search /> : <Preloader closed />}
+        {isNothingSearch ? <Preloader /> : <Preloader closed />}
         {isNewsSearchSuccess && <NewsCardList />}
         {isNewsSearchError && <NewsCardList searchWithError />}
         <About />

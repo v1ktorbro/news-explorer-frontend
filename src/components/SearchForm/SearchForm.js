@@ -1,36 +1,15 @@
 import './SearchForm.css';
 import React from 'react';
-import newsApi from '../../utils/NewsApi';
 
-function SearchForm({
-  setIsNewsSearchSuccess, setIsSearcinghNews, setIsNothingSearch, setIsNewsSearchError,
-}) {
+function SearchForm({ onSearchNews }) {
   const inputRef = React.useRef();
   const [inputValue, setInputValue] = React.useState('');
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    setIsSearcinghNews(true);
-    setIsNewsSearchSuccess(false);
-    setIsNothingSearch(false);
     const btnSubmitForm = document.querySelector('.search-form__btn-search');
-    console.log('произошел сабмит данных:', inputValue);
-    newsApi.getResultSearch(inputValue)
-      .then((res) => {
-        if (res.status === 'ok') {
-          setIsSearcinghNews(false);
-          setIsNewsSearchSuccess(true);
-        }
-        if (res.status === 'error') {
-          setIsNewsSearchError(true);
-          setIsSearcinghNews(false);
-        }
-        if (res.totalResults === 0) {
-          setIsNothingSearch(true);
-          setIsNewsSearchSuccess(false);
-        }
-      });
     btnSubmitForm.disabled = true;
+    onSearchNews(inputValue);
   };
 
   const showInputError = (element, formError) => {
