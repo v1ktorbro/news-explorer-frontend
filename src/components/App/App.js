@@ -13,6 +13,8 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 
 function App() {
+  const [isNewsSearchSuccess, setIsNewsSearchSuccess] = React.useState(false);
+  const [isNewsSearchError, setIsNewsSearchError] = React.useState(false);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
 
@@ -47,8 +49,12 @@ function App() {
         <Header onMain>
           <Navigation onMain loggedIn onLogin={handleLoginPopup} />
         </Header>
-        <Main />
-        <NewsCardList />
+        <Main
+          setIsNewsSearchSuccess={setIsNewsSearchSuccess}
+          setIsNewsSearchError={setIsNewsSearchError}
+        />
+        {isNewsSearchSuccess && <NewsCardList />}
+        {isNewsSearchError && <NewsCardList searchWithError />}
         <About />
       </Route>
       <Route path="/saved-news">
