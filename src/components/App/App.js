@@ -20,6 +20,7 @@ function App() {
   const [isNothingSearch, setIsNothingSearch] = React.useState(false);
   const [isNewsSearchSuccess, setIsNewsSearchSuccess] = React.useState(false);
   const [isNewsSearchError, setIsNewsSearchError] = React.useState(false);
+  const [newsCards, setNewsCards] = React.useState([]);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
 
@@ -48,6 +49,7 @@ function App() {
         if (res.status === 'ok') {
           setIsSearcinghNews(false);
           setIsNewsSearchSuccess(true);
+          setNewsCards(res.articles);
         } else {
           setIsNewsSearchError(true);
           setIsSearcinghNews(false);
@@ -82,7 +84,7 @@ function App() {
         />
         {isSearchingNews ? <Preloader search /> : <Preloader closed />}
         {isNothingSearch ? <Preloader /> : <Preloader closed />}
-        {isNewsSearchSuccess && <NewsCardList />}
+        {isNewsSearchSuccess && <NewsCardList cards={newsCards} />}
         {isNewsSearchError && <NewsCardList searchWithError />}
         <About />
       </Route>

@@ -1,15 +1,21 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import './NewsCard.css';
 import React from 'react';
 
-const forestImage = require('../../images/news-card_forest.png');
-const parkImage = require('../../images/news-card_park.png');
-const taygaImage = require('../../images/news-card_tayga.png');
+function NewsCard({ savedCard, card }) {
+  const dateCreateNews = (dateISO8601) => {
+    new Intl.DateTimeFormat('ru', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }).format(new Date(dateISO8601));
+  };
 
-function NewsCard({ savedCard }) {
   return (
-    <div className="news-card">
+    <div className="news-card" onClick={() => window.open(card.url)}>
       <div className="news-card__block-image">
-        <img src={parkImage} className="news-card__image-main" alt="фото карточки" />
+        <img src={card.urlToImage} className="news-card__image-main" alt="фото карточки" />
         { savedCard && (
         <div className="news-card__keyword-block">
           <span className="news-card__keyword-text">Природа</span>
@@ -21,10 +27,10 @@ function NewsCard({ savedCard }) {
         </div>
       </div>
       <div className="news-card__info-block">
-        <span className="news-card__date">2 августа, 2019</span>
-        <h3 className="news-card__title">Национальное достояние – парки</h3>
-        <p className="news-card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-        <span className="news-card__source">Лента.ру</span>
+        <span className="news-card__date">{dateCreateNews(card.publishedAt)}</span>
+        <h3 className="news-card__title">{card.title}</h3>
+        <p className="news-card__description">{card.description}</p>
+        <span className="news-card__source">{card.source.name}</span>
       </div>
     </div>
   );
