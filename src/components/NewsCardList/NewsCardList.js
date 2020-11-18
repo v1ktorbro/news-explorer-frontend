@@ -2,7 +2,7 @@ import './NewsCardList.css';
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 
-function NewsCardList({ searchWithError, cards }) {
+function NewsCardList({ searchWithError, cards, onArticleSave }) {
   const [loadIndexCards, setIsLoadIndexCard] = React.useState(3);
 
   const showMoreCards = () => {
@@ -25,6 +25,7 @@ function NewsCardList({ searchWithError, cards }) {
                   // eslint-disable-next-line react/no-array-index-key
                   key={index}
                   card={card}
+                  onArticleSave={onArticleSave}
                 />
               ))}
             </div>

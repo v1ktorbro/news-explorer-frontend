@@ -14,6 +14,7 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 import Preloader from '../Preloader/Preloader';
 import newsApi from '../../utils/NewsApi';
+import mainApi from '../../utils/MainApi';
 
 function App() {
   const [isSearchingNews, setIsSearcinghNews] = React.useState(false);
@@ -71,6 +72,13 @@ function App() {
     }
   }, []);
 
+  const handleSaveArticle = (dataOfArticle) => {
+    console.log(dataOfArticle);
+    mainApi.saveArticle(dataOfArticle).then((res) => {
+      console.log(res);
+    });
+  };
+
   return (
     <>
       <Route exact path="/">
@@ -92,7 +100,12 @@ function App() {
         />
         {isSearchingNews ? <Preloader search /> : <Preloader closed />}
         {isNothingSearch ? <Preloader /> : <Preloader closed />}
-        {isNewsSearchSuccess && <NewsCardList cards={newsCards} />}
+        {isNewsSearchSuccess && (
+        <NewsCardList
+          cards={newsCards}
+          onArticleSave={handleSaveArticle}
+        />
+        )}
         {isNewsSearchError && <NewsCardList searchWithError />}
         <About />
       </Route>

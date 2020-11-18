@@ -4,7 +4,9 @@
 import './NewsCard.css';
 import React from 'react';
 
-function NewsCard({ savedCard, card, loggedIn }) {
+function NewsCard({
+  savedCard, card, loggedIn, onArticleSave,
+}) {
   const dateCreateNews = (dateISO8601) => new Intl.DateTimeFormat('ru', {
     year: 'numeric',
     month: 'long',
@@ -29,6 +31,7 @@ function NewsCard({ savedCard, card, loggedIn }) {
     /* надо будет добавить какой-нибудь пропс типа loggenIn
     и если этот пропс false то добавить тумблер */
     /* так же выключить кнопку */
+    onArticleSave(card);
     const cardHintBlock = evt.target.closest('.news-card__btn-block');
     const hitnElement = cardHintBlock.querySelector('.news-card__hint-login');
     hitnElement.classList.toggle('news-card__hint-login_closed');
