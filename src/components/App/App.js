@@ -40,6 +40,7 @@ function App() {
   };
 
   const handleSearchNewsSubmit = (requestWord) => {
+    localStorage.setItem('requestOfUser', requestWord);
     setIsSearcinghNews(true);
     setIsNewsSearchSuccess(false);
     setIsNothingSearch(false);
@@ -62,6 +63,13 @@ function App() {
         console.log(err);
       });
   };
+
+  React.useEffect(() => {
+    const lastRequest = localStorage.getItem('requestOfUser');
+    if (lastRequest) {
+      handleSearchNewsSubmit(lastRequest);
+    }
+  }, []);
 
   return (
     <>
