@@ -1,0 +1,36 @@
+.news-card__btn-block {
+  margin: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  top: 0;
+  right: 0;
+  padding: 24px;
+}
+
+@media screen and (max-width: 830px) {
+  .news-card__btn-block {
+    padding: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news-card__btn-block {
+    padding: 8px;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .news-card__btn-block {
+    height: 45px;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .news-card__btn-block {
+    padding: 16px;
+  }
+}

@@ -4,13 +4,34 @@
 import './NewsCard.css';
 import React from 'react';
 
-function NewsCard({ savedCard, card }) {
-  const dateCreateNews = (dateISO8601) => {
-    return new Intl.DateTimeFormat('ru', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }).format(new Date(dateISO8601));
+function NewsCard({ savedCard, card, loggedIn }) {
+  const dateCreateNews = (dateISO8601) => new Intl.DateTimeFormat('ru', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(new Date(dateISO8601));
+
+  const findCurrentBtnOfCard = (evt) => evt.target.querySelector('.news-card__hint-login');
+
+  const hintShow = (evt) => {
+    if (findCurrentBtnOfCard(evt) && !loggedIn) {
+      findCurrentBtnOfCard(evt).classList.remove('news-card__hint-login_closed');
+    }
+  };
+
+  const hintHide = (evt) => {
+    if (findCurrentBtnOfCard(evt) && !loggedIn) {
+      findCurrentBtnOfCard(evt).classList.add('news-card__hint-login_closed');
+    }
+  };
+
+  const savedCardNews = (evt) => {
+    /* надо будет добавить какой-нибудь пропс типа loggenIn
+    и если этот пропс false то добавить тумблер */
+    /* так же выключить кнопку */
+    const cardHintBlock = evt.target.closest('.news-card__btn-block');
+    const hitnElement = cardHintBlock.querySelector('.news-card__hint-login');
+    hitnElement.classList.toggle('news-card__hint-login_closed');
   };
 
   return (
@@ -22,9 +43,15 @@ function NewsCard({ savedCard, card }) {
           <span className="news-card__keyword-text">Природа</span>
         </div>
         ) }
-        <button className={savedCard ? 'news-card__btn-delete' : 'news-card__btn-bookmark'} aria-label="bookmark" type="button" />
-        <div className="news-card__hint-login news-card__hint-login_closed">
-          <span className="news-card__text-hint">{ savedCard ? 'Убрать из сохранённых' : 'Войдите, чтобы сохранять статьи' }</span>
+        <div
+          className="news-card__btn-block"
+          onMouseEnter={(evt) => hintShow(evt)}
+          onMouseLeave={(evt) => hintHide(evt)}
+        >
+          <button onClick={(evt) => { savedCardNews(evt); }} className={savedCard ? 'news-card__btn-delete' : 'news-card__btn-bookmark'} aria-label="bookmark" type="button" />
+          <div className="news-card__hint-login news-card__hint-login_closed">
+            <span className="news-card__text-hint">{ savedCard ? 'Убрать из сохранённых' : 'Войдите,  чтобы сохранять статьи' }</span>
+          </div>
         </div>
       </div>
       <div className="news-card__info-block" onClick={() => window.open(card.url)}>

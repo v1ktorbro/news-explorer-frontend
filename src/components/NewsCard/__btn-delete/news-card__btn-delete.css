@@ -1,9 +1,6 @@
 .news-card__btn-delete {
-  position: absolute;
   width: 40px;
   height: 40px;
-  top: 24px;
-  right: 24px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -25,15 +22,5 @@
   .news-card__btn-delete {
     width: 45px;
     height: 45px;
-    right: 20px;
-    top: 20px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .news-card__btn-delete {
-    width: 40px;
-    height: 40px;
-    background-size: 24px 24px;
   }
 }
