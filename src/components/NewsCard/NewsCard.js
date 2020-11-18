@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import './NewsCard.css';
@@ -5,7 +6,7 @@ import React from 'react';
 
 function NewsCard({ savedCard, card }) {
   const dateCreateNews = (dateISO8601) => {
-    new Intl.DateTimeFormat('ru', {
+    return new Intl.DateTimeFormat('ru', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -13,9 +14,9 @@ function NewsCard({ savedCard, card }) {
   };
 
   return (
-    <div className="news-card" onClick={() => window.open(card.url)}>
+    <div className="news-card">
       <div className="news-card__block-image">
-        <img src={card.urlToImage} className="news-card__image-main" alt="фото карточки" />
+        <img src={card.urlToImage} className="news-card__image-main" onClick={() => window.open(card.url)} alt="фото карточки" />
         { savedCard && (
         <div className="news-card__keyword-block">
           <span className="news-card__keyword-text">Природа</span>
@@ -26,7 +27,7 @@ function NewsCard({ savedCard, card }) {
           <span className="news-card__text-hint">{ savedCard ? 'Убрать из сохранённых' : 'Войдите, чтобы сохранять статьи' }</span>
         </div>
       </div>
-      <div className="news-card__info-block">
+      <div className="news-card__info-block" onClick={() => window.open(card.url)}>
         <span className="news-card__date">{dateCreateNews(card.publishedAt)}</span>
         <h3 className="news-card__title">{card.title}</h3>
         <p className="news-card__description">{card.description}</p>
