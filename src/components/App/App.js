@@ -15,6 +15,8 @@ import Register from '../Register/Register';
 import Preloader from '../Preloader/Preloader';
 import newsApi from '../../utils/NewsApi';
 import mainApi from '../../utils/MainApi';
+import SuccessRegisterPopup from '../SuccessRegisterPopup/SuccessRegisterPopup';
+import auth from '../../utils/Auth';
 
 function App() {
   const [isSearchingNews, setIsSearcinghNews] = React.useState(false);
@@ -24,6 +26,7 @@ function App() {
   const [newsCards, setNewsCards] = React.useState([]);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
+  const [registerSuccessPopupOpen, setRegisterSuccessPopupOpen] = React.useState(false);
 
   const handleLoginPopup = () => {
     setIsLoginPopupOpen(true);
@@ -38,6 +41,12 @@ function App() {
   const closeAllPopups = () => {
     setIsLoginPopupOpen(false);
     setIsRegisterPopupOpen(false);
+    setRegisterSuccessPopupOpen(false);
+  };
+
+  const handleSuccessRegisterPopup = () => {
+    setRegisterSuccessPopupOpen(false);
+    handleLoginPopup();
   };
 
   const handleSearchNewsSubmit = (requestWord) => {
@@ -79,6 +88,15 @@ function App() {
     });
   };
 
+  const handleRegister = (dataOfInputs) => {
+    auth.register(dataOfInputs).then((res) => {
+      if (res) {
+        setIsRegisterPopupOpen(false);
+        setRegisterSuccessPopupOpen(true);
+      }
+    });
+  };
+
   return (
     <>
       <Route exact path="/">
@@ -91,7 +109,15 @@ function App() {
           isOpen={isRegisterPopupOpen}
           onClose={closeAllPopups}
           onLogin={handleLoginPopup}
+          handleRegister={handleRegister}
         />
+        { registerSuccessPopupOpen && (
+        <SuccessRegisterPopup
+          onClose={closeAllPopups}
+          onLogin={handleSuccessRegisterPopup}
+          isOpen={registerSuccessPopupOpen}
+        />
+        )}
         <Header onMain>
           <Navigation onMain loggedIn onLogin={handleLoginPopup} />
         </Header>
