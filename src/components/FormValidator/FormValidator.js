@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /* eslint-disable max-len */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable default-case */
@@ -62,7 +63,7 @@ export const useInput = (initialValue, validations) => {
     setError(e.target.validationMessage);
   };
 
-  const onBlur = (e) => {
+  const onBlur = () => {
     setIsDirty(true);
   };
 
