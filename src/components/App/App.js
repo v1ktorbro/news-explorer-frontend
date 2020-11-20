@@ -17,6 +17,7 @@ import newsApi from '../../utils/NewsApi';
 import mainApi from '../../utils/MainApi';
 import SuccessRegisterPopup from '../SuccessRegisterPopup/SuccessRegisterPopup';
 import auth from '../../utils/Auth';
+import CurrentUserContext from '../../context/CurrentUserContext';
 
 function App() {
   const [isSearchingNews, setIsSearcinghNews] = React.useState(false);
@@ -27,6 +28,7 @@ function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [registerSuccessPopupOpen, setRegisterSuccessPopupOpen] = React.useState(false);
+  const [currentUser, setCurrentUser] = React.useState({});
 
   const handleLoginPopup = () => {
     setIsLoginPopupOpen(true);
@@ -97,51 +99,65 @@ function App() {
     });
   };
 
+  const handleLogin = (dataOfInputs) => {
+    auth.login(dataOfInputs).then((res) => {
+      if (res.status === 200) {
+        auth.getInfoLogin().then((infoAboutCurrentUser) => {
+          setCurrentUser(infoAboutCurrentUser);
+          closeAllPopups();
+        });
+      }
+    });
+  };
+
   return (
     <>
-      <Route exact path="/">
-        <Login
-          isOpen={isLoginPopupOpen}
-          onClose={closeAllPopups}
-          onRegister={handleRegisterPopup}
-        />
-        <Register
-          isOpen={isRegisterPopupOpen}
-          onClose={closeAllPopups}
-          onLogin={handleLoginPopup}
-          handleRegister={handleRegister}
-        />
-        { registerSuccessPopupOpen && (
-        <SuccessRegisterPopup
-          onClose={closeAllPopups}
-          onLogin={handleSuccessRegisterPopup}
-          isOpen={registerSuccessPopupOpen}
-        />
-        )}
-        <Header onMain>
-          <Navigation onMain loggedIn onLogin={handleLoginPopup} />
-        </Header>
-        <Main
-          onSearchNews={handleSearchNewsSubmit}
-        />
-        {isSearchingNews ? <Preloader search /> : <Preloader closed />}
-        {isNothingSearch ? <Preloader /> : <Preloader closed />}
-        {isNewsSearchSuccess && (
-        <NewsCardList
-          cards={newsCards}
-          onArticleSave={handleSaveArticle}
-        />
-        )}
-        {isNewsSearchError && <NewsCardList searchWithError />}
-        <About />
-      </Route>
-      <Route path="/saved-news">
-        <Header>
-          <Navigation loggedIn />
-        </Header>
-        <SavedNewsHeader />
-        <SavedNews />
-      </Route>
+      <CurrentUserContext.Provider value={currentUser}>
+        <Route exact path="/">
+          <Login
+            isOpen={isLoginPopupOpen}
+            onClose={closeAllPopups}
+            onRegister={handleRegisterPopup}
+            handleLogin={handleLogin}
+          />
+          <Register
+            isOpen={isRegisterPopupOpen}
+            onClose={closeAllPopups}
+            onLogin={handleLoginPopup}
+            handleRegister={handleRegister}
+          />
+          { registerSuccessPopupOpen && (
+          <SuccessRegisterPopup
+            onClose={closeAllPopups}
+            onLogin={handleSuccessRegisterPopup}
+            isOpen={registerSuccessPopupOpen}
+          />
+          )}
+          <Header onMain>
+            <Navigation onMain loggedIn onLogin={handleLoginPopup} />
+          </Header>
+          <Main
+            onSearchNews={handleSearchNewsSubmit}
+          />
+          {isSearchingNews ? <Preloader search /> : <Preloader closed />}
+          {isNothingSearch ? <Preloader /> : <Preloader closed />}
+          {isNewsSearchSuccess && (
+          <NewsCardList
+            cards={newsCards}
+            onArticleSave={handleSaveArticle}
+          />
+          )}
+          {isNewsSearchError && <NewsCardList searchWithError />}
+          <About />
+        </Route>
+        <Route path="/saved-news">
+          <Header>
+            <Navigation loggedIn />
+          </Header>
+          <SavedNewsHeader />
+          <SavedNews />
+        </Route>
+      </CurrentUserContext.Provider>
       <Footer />
     </>
   );
