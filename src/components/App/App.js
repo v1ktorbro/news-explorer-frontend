@@ -18,6 +18,7 @@ import mainApi from '../../utils/MainApi';
 import SuccessRegisterPopup from '../SuccessRegisterPopup/SuccessRegisterPopup';
 import auth from '../../utils/Auth';
 import CurrentUserContext from '../../context/CurrentUserContext';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
   const [isSearchingNews, setIsSearcinghNews] = React.useState(false);
@@ -169,16 +170,23 @@ function App() {
           {isNewsSearchError && <NewsCardList searchWithError />}
           <About />
         </Route>
-        <Route path="/saved-news">
-          <Header>
-            <Navigation loggedIn={loggedIn} savedNews />
-          </Header>
-          <SavedNewsHeader cards={savedNewsCards} />
-          <SavedNews
-            cards={savedNewsCards}
-            onArticleDelete={handleDeleteArticle}
-          />
-        </Route>
+        <ProtectedRoute
+          path="/"
+          loggedIn={loggedIn}
+          onLogin={handleLoginPopup}
+          Component={(
+            <Route path="/saved-news">
+              <Header>
+                <Navigation loggedIn={loggedIn} savedNews />
+              </Header>
+              <SavedNewsHeader cards={savedNewsCards} />
+              <SavedNews
+                cards={savedNewsCards}
+                onArticleDelete={handleDeleteArticle}
+              />
+            </Route>
+            )}
+        />
       </CurrentUserContext.Provider>
       <Footer />
     </>
