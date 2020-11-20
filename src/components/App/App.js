@@ -25,6 +25,7 @@ function App() {
   const [isNewsSearchSuccess, setIsNewsSearchSuccess] = React.useState(false);
   const [isNewsSearchError, setIsNewsSearchError] = React.useState(false);
   const [newsCards, setNewsCards] = React.useState([]);
+  const [savedNewsCards, setSavedNewsCards] = React.useState([]);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [registerSuccessPopupOpen, setRegisterSuccessPopupOpen] = React.useState(false);
@@ -85,10 +86,23 @@ function App() {
   }, []);
 
   const handleSaveArticle = (dataOfArticle) => {
-    console.log(dataOfArticle);
     mainApi.saveArticle(dataOfArticle).then((res) => {
-      console.log(res);
-    });
+      if (res) {
+        mainApi.getSavedArticlesOfUser().then((savedCardsFromApi) => {
+          setSavedNewsCards(savedCardsFromApi);
+        }); /* если новая карточка сохранилась в БД, то обновляем стейт с сохр карточками */
+      }
+    }).catch((err) => console.log(err));
+  };
+
+  const handleDeleteArticle = (idSavedOfCard) => {
+    mainApi.deleteArticle(idSavedOfCard).then((res) => {
+      if (res) {
+        mainApi.getSavedArticlesOfUser().then((savedCardsFromApi) => {
+          setSavedNewsCards(savedCardsFromApi);
+        }); /* если карточка удалилась из БД, то обновляем стейт с сохр карточками */
+      }
+    }).catch((err) => console.log(err));
   };
 
   const handleRegister = (dataOfInputs) => {
@@ -97,7 +111,7 @@ function App() {
         setIsRegisterPopupOpen(false);
         setRegisterSuccessPopupOpen(true);
       }
-    });
+    }).catch((err) => console.log(err));
   };
 
   const handleLogin = (dataOfInputs) => {
@@ -108,8 +122,11 @@ function App() {
           closeAllPopups();
           setLoggedIn(true);
         });
+        mainApi.getSavedArticlesOfUser().then((savedCardsFromApi) => {
+          setSavedNewsCards(savedCardsFromApi);
+        });
       }
-    });
+    }).catch((err) => console.log(err));
   };
 
   return (
@@ -156,8 +173,11 @@ function App() {
           <Header>
             <Navigation loggedIn={loggedIn} savedNews />
           </Header>
-          <SavedNewsHeader />
-          <SavedNews />
+          <SavedNewsHeader cards={savedNewsCards} />
+          <SavedNews
+            cards={savedNewsCards}
+            onArticleDelete={handleDeleteArticle}
+          />
         </Route>
       </CurrentUserContext.Provider>
       <Footer />
