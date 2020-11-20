@@ -15,13 +15,11 @@ class Auth {
     });
   }
 
-  authorize({ email, password }) {
+  login({ email, password }) {
     return fetch(`${this.url}/signin`, {
       method: 'POST',
       headers: this.headers,
       body: JSON.stringify({ email, password }),
-    }).then((res) => {
-      return res.json();
     });
   }
 
@@ -37,7 +35,7 @@ class Auth {
 }
 
 const auth = new Auth({
-  url: 'http://localhost:3001',
+  url: 'http://127.0.0.1:3001',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
