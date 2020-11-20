@@ -29,6 +29,7 @@ function App() {
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [registerSuccessPopupOpen, setRegisterSuccessPopupOpen] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
+  const [loggedIn, setLoggedIn] = React.useState(false);
 
   const handleLoginPopup = () => {
     setIsLoginPopupOpen(true);
@@ -105,6 +106,7 @@ function App() {
         auth.getInfoLogin().then((infoAboutCurrentUser) => {
           setCurrentUser(infoAboutCurrentUser);
           closeAllPopups();
+          setLoggedIn(true);
         });
       }
     });
@@ -134,7 +136,7 @@ function App() {
           />
           )}
           <Header onMain>
-            <Navigation onMain loggedIn onLogin={handleLoginPopup} />
+            <Navigation onMain loggedIn={loggedIn} onLogin={handleLoginPopup} />
           </Header>
           <Main
             onSearchNews={handleSearchNewsSubmit}
@@ -152,7 +154,7 @@ function App() {
         </Route>
         <Route path="/saved-news">
           <Header>
-            <Navigation loggedIn />
+            <Navigation loggedIn={loggedIn} savedNews />
           </Header>
           <SavedNewsHeader />
           <SavedNews />
