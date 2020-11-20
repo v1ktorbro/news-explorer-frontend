@@ -64,8 +64,8 @@ function NewsCard({
       <div className="news-card__info-block" onClick={() => window.open(card.url)}>
         <span className="news-card__date">{savedCard ? dateCreateNews(card.date) : dateCreateNews(card.publishedAt)}</span>
         <h3 className="news-card__title">{card.title}</h3>
-        <p className="news-card__description">{card.description}</p>
-        <span className="news-card__source">{card.source.name}</span>
+        <p className="news-card__description">{savedCard ? card.text : card.description}</p>
+        <span className="news-card__source">{savedCard ? card.source : card.source.name}</span>
       </div>
     </div>
   );
