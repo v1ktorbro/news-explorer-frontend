@@ -5,17 +5,27 @@ class MainApi {
     this.headers = headers;
   }
 
+  getSavedArticlesOfUser() {
+    return fetch(`${this.url}/articles`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: this.headers,
+    }).then((res) => {
+      return res.json();
+    });
+  }
+
   saveArticle(dataOfArticle) {
     return fetch(`${this.url}/articles`, {
       method: 'POST',
       credentials: 'include',
       headers: this.headers,
       body: JSON.stringify({
-        keyword: dataOfArticle.source.id,
+        keyword: localStorage.getItem('requestOfUser'),
         title: dataOfArticle.title,
         text: dataOfArticle.description,
         date: dataOfArticle.publishedAt,
-        source: dataOfArticle.source,
+        source: dataOfArticle.source.name,
         link: dataOfArticle.url,
         image: dataOfArticle.urlToImage,
       }),
@@ -34,7 +44,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  url: 'http://localhost:3001',
+  url: 'http://127.0.0.1:3001',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
