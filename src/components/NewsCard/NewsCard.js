@@ -34,7 +34,7 @@ function NewsCard({
     onArticleSave(card);
     const cardHintBlock = evt.target.closest('.news-card__btn-block');
     const hitnElement = cardHintBlock.querySelector('.news-card__hint-login');
-    hitnElement.classList.toggle('news-card__hint-login_closed');
+    /* hitnElement.classList.toggle('news-card__hint-login_closed'); */
   };
 
   const deleteSavedCard = () => {
@@ -55,10 +55,12 @@ function NewsCard({
           onMouseEnter={(evt) => hintShow(evt)}
           onMouseLeave={(evt) => hintHide(evt)}
         >
-          <button onClick={savedCard ? deleteSavedCard : (evt) => { savedCardNews(evt); }} className={savedCard ? 'news-card__btn-delete' : 'news-card__btn-bookmark'} aria-label="bookmark" type="button" />
+          <button onClick={savedCard ? deleteSavedCard : (evt) => { savedCardNews(evt); }} className={`${savedCard ? 'news-card__btn-delete' : 'news-card__btn-bookmark'} ${!savedCard && card._id && 'news-card__btn-bookmark_active'}`} aria-label="bookmark" type="button" />
+          {!loggedIn && (
           <div className="news-card__hint-login news-card__hint-login_closed">
             <span className="news-card__text-hint">{ savedCard ? 'Убрать из сохранённых' : 'Войдите,  чтобы сохранять статьи' }</span>
           </div>
+          )}
         </div>
       </div>
       <div className="news-card__info-block" onClick={() => window.open(card.url)}>

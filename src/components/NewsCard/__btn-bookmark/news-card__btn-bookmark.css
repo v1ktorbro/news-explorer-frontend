@@ -1,3 +1,5 @@
+@import url('./_active/news-card__btn-bookmark_active.css');
+
 .news-card__btn-bookmark {
   width: 40px;
   height: 40px;
