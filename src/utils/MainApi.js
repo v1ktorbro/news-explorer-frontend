@@ -8,7 +8,6 @@ class MainApi {
   getSavedArticlesOfUser() {
     return fetch(`${this.url}/articles`, {
       method: 'GET',
-      credentials: 'include',
       headers: this.headers,
     }).then((res) => {
       return res.json();
@@ -18,7 +17,6 @@ class MainApi {
   saveArticle(dataOfArticle) {
     return fetch(`${this.url}/articles`, {
       method: 'POST',
-      credentials: 'include',
       headers: this.headers,
       body: JSON.stringify({
         keyword: localStorage.getItem('requestOfUser'),
@@ -37,7 +35,6 @@ class MainApi {
   deleteArticle(articleId) {
     return fetch(`${this.url}/articles/${articleId}`, {
       method: 'DELETE',
-      credentials: 'include',
       headers: this.headers,
     });
   }
@@ -46,7 +43,7 @@ class MainApi {
 const mainApi = new MainApi({
   url: 'http://127.0.0.1:3001',
   headers: {
-    Accept: 'application/json',
+    Authorization: localStorage.getItem('token'),
     'Content-Type': 'application/json',
   },
 });

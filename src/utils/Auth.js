@@ -1,45 +1,46 @@
 /* eslint-disable arrow-body-style */
-class Auth {
-  constructor({ url, headers }) {
-    this.url = url;
-    this.headers = headers;
-  }
+export const BASE_URL = 'http://127.0.0.1:3001';
 
-  register({ email, password, name }) {
-    return fetch(`${this.url}/signup`, {
-      method: 'POST',
-      headers: this.headers,
-      body: JSON.stringify({ email, password, name }),
-    }).then((res) => {
-      return res.json();
-    });
-  }
+export const register = ({ email, password, name }) => {
+  return fetch(`${BASE_URL}/signup`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password, name }),
+  }).then((res) => {
+    return res.json();
+  });
+};
 
-  login({ email, password }) {
-    return fetch(`${this.url}/signin`, {
-      method: 'POST',
-      headers: this.headers,
-      body: JSON.stringify({ email, password }),
-    });
-  }
+export const login = ({ email, password }) => {
+  return fetch(`${BASE_URL}/signin`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  }).then((res) => {
+    return res.json();
+  }).then((data) => {
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+      return data;
+    }
+  });
+};
 
-  getInfoLogin() {
-    return fetch(`${this.url}/users/me`, {
-      method: 'GET',
-      credentials: 'include',
-      headers: this.headers,
-    }).then((res) => {
-      return res.json();
-    });
-  }
-}
-
-const auth = new Auth({
-  url: 'http://127.0.0.1:3001',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-});
-
-export default auth;
+export const getInfoLogin = (token) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((res) => {
+    return res.json();
+  });
+};
