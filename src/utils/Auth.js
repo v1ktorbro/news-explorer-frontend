@@ -24,6 +24,7 @@ export const login = ({ email, password }) => {
     body: JSON.stringify({ email, password }),
   }).then((res) => {
     return res.json();
+  // eslint-disable-next-line consistent-return
   }).then((data) => {
     if (data.token) {
       localStorage.setItem('token', data.token);

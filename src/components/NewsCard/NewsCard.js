@@ -28,13 +28,13 @@ function NewsCard({
   };
 
   const savedCardNews = (evt) => {
-    /* надо будет добавить какой-нибудь пропс типа loggenIn
-    и если этот пропс false то добавить тумблер */
-    /* так же выключить кнопку */
-    onArticleSave(card);
-    const cardHintBlock = evt.target.closest('.news-card__btn-block');
-    const hitnElement = cardHintBlock.querySelector('.news-card__hint-login');
-    /* hitnElement.classList.toggle('news-card__hint-login_closed'); */
+    if (loggedIn) {
+      onArticleSave(card);
+    } else {
+      const cardHintBlock = evt.target.closest('.news-card__btn-block');
+      const hitnElement = cardHintBlock.querySelector('.news-card__hint-login');
+      hitnElement.classList.toggle('news-card__hint-login_closed');
+    }
   };
 
   const deleteSavedCard = () => {
@@ -44,7 +44,7 @@ function NewsCard({
   return (
     <div className="news-card">
       <div className="news-card__block-image">
-        <img src={savedCard ? card.image : card.urlToImage} className="news-card__image-main" onClick={() => window.open(card.url)} alt="фото карточки" />
+        <img src={savedCard ? card.image : card.urlToImage} className="news-card__image-main" onClick={savedCard ? () => window.open(card.link) : () => window.open(card.url)} alt="фото карточки" />
         { savedCard && (
         <div className="news-card__keyword-block">
           <span className="news-card__keyword-text">{card.keyword}</span>
@@ -55,7 +55,7 @@ function NewsCard({
           onMouseEnter={(evt) => hintShow(evt)}
           onMouseLeave={(evt) => hintHide(evt)}
         >
-          <button onClick={savedCard ? deleteSavedCard : (evt) => { savedCardNews(evt); }} className={`${savedCard ? 'news-card__btn-delete' : 'news-card__btn-bookmark'} ${!savedCard && card._id && 'news-card__btn-bookmark_active'}`} aria-label="bookmark" type="button" disabled={!loggedIn} />
+          <button onClick={savedCard ? deleteSavedCard : (evt) => { savedCardNews(evt); }} className={`${savedCard ? 'news-card__btn-delete' : 'news-card__btn-bookmark'} ${!savedCard && card._id && 'news-card__btn-bookmark_active'}`} aria-label="bookmark" type="button" />
           {!loggedIn && (
           <div className="news-card__hint-login news-card__hint-login_closed">
             <span className="news-card__text-hint">{ savedCard ? 'Убрать из сохранённых' : 'Войдите,  чтобы сохранять статьи' }</span>
@@ -63,7 +63,7 @@ function NewsCard({
           )}
         </div>
       </div>
-      <div className="news-card__info-block" onClick={() => window.open(card.url)}>
+      <div className="news-card__info-block" onClick={savedCard ? () => window.open(card.link) : () => window.open(card.url)}>
         <span className="news-card__date">{savedCard ? dateCreateNews(card.date) : dateCreateNews(card.publishedAt)}</span>
         <h3 className="news-card__title">{card.title}</h3>
         <p className="news-card__description">{savedCard ? card.text : card.description}</p>
