@@ -135,7 +135,7 @@ function App() {
   const handleLogin = (dataOfInputs) => {
     auth.login(dataOfInputs).then((data) => {
       if (data.token) {
-        const token = localStorage.getItem('token', data.token);
+        const token = localStorage.getItem('token');
         auth.getInfoLogin(token).then((infoAboutCurrentUser) => {
           if (infoAboutCurrentUser) {
             setCurrentUser(infoAboutCurrentUser);
