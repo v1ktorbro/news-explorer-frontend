@@ -16,7 +16,7 @@ import Preloader from '../Preloader/Preloader';
 import newsApi from '../../utils/NewsApi';
 import mainApi from '../../utils/MainApi';
 import SuccessRegisterPopup from '../SuccessRegisterPopup/SuccessRegisterPopup';
-import auth from '../../utils/Auth';
+import * as auth from '../../utils/Auth';
 import CurrentUserContext from '../../context/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
@@ -27,7 +27,7 @@ function App() {
   const [isNewsSearchError, setIsNewsSearchError] = React.useState(false);
   const [newsCards, setNewsCards] = React.useState([]);
   const [savedNewsCards, setSavedNewsCards] = React.useState([]);
-  const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
+  const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(true);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [registerSuccessPopupOpen, setRegisterSuccessPopupOpen] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
@@ -86,11 +86,33 @@ function App() {
     }
   }, []);
 
+  // eslint-disable-next-line arrow-body-style
+  const compareArticles = (ownArt, outArt) => {
+    // eslint-disable-next-line max-len
+    return ownArt.text === outArt.description && ownArt.title === outArt.title && ownArt.source === outArt.source.name;
+  };
+
+  const setIconActiveOfSavedCard = (cardsNewsApi, ownSavedCards) => {
+    const result = cardsNewsApi.map((outsiderCard) => {
+      const card = ownSavedCards.find((ownCard) => compareArticles(ownCard, outsiderCard));
+      if (card && !outsiderCard._id) {
+        // eslint-disable-next-line no-param-reassign
+        outsiderCard._id = card._id;
+      } else if (!card && outsiderCard._id) {
+        // eslint-disable-next-line no-param-reassign
+        delete outsiderCard._id;
+      }
+      return outsiderCard;
+    });
+    setNewsCards(result);
+  };
+
   const handleSaveArticle = (dataOfArticle) => {
     mainApi.saveArticle(dataOfArticle).then((res) => {
       if (res) {
         mainApi.getSavedArticlesOfUser().then((savedCardsFromApi) => {
           setSavedNewsCards(savedCardsFromApi);
+          setIconActiveOfSavedCard(newsCards, savedCardsFromApi);
         }); /* если новая карточка сохранилась в БД, то обновляем стейт с сохр карточками */
       }
     }).catch((err) => console.log(err));
@@ -101,6 +123,7 @@ function App() {
       if (res) {
         mainApi.getSavedArticlesOfUser().then((savedCardsFromApi) => {
           setSavedNewsCards(savedCardsFromApi);
+          setIconActiveOfSavedCard(newsCards, savedCardsFromApi);
         }); /* если карточка удалилась из БД, то обновляем стейт с сохр карточками */
       }
     }).catch((err) => console.log(err));
@@ -116,15 +139,19 @@ function App() {
   };
 
   const handleLogin = (dataOfInputs) => {
-    auth.login(dataOfInputs).then((res) => {
-      if (res.status === 200) {
-        auth.getInfoLogin().then((infoAboutCurrentUser) => {
-          setCurrentUser(infoAboutCurrentUser);
-          closeAllPopups();
-          setLoggedIn(true);
+    auth.login(dataOfInputs).then((data) => {
+      if (data.token) {
+        const token = localStorage.getItem('token', data.token);
+        auth.getInfoLogin(token).then((infoAboutCurrentUser) => {
+          if (infoAboutCurrentUser) {
+            setCurrentUser(infoAboutCurrentUser);
+            closeAllPopups();
+            setLoggedIn(true);
+          }
         });
         mainApi.getSavedArticlesOfUser().then((savedCardsFromApi) => {
           setSavedNewsCards(savedCardsFromApi);
+          setIconActiveOfSavedCard(newsCards, savedCardsFromApi);
         });
       }
     }).catch((err) => console.log(err));
@@ -165,6 +192,7 @@ function App() {
           <NewsCardList
             cards={newsCards}
             onArticleSave={handleSaveArticle}
+            loggedIn={loggedIn}
           />
           )}
           {isNewsSearchError && <NewsCardList searchWithError />}
