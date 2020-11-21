@@ -1,5 +1,6 @@
+/* eslint-disable consistent-return */
 /* eslint-disable arrow-body-style */
-export const BASE_URL = 'http://127.0.0.1:3001';
+export const BASE_URL = 'https://v1ktorbro.students.nomoreparties.xyz';
 
 export const register = ({ email, password, name }) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -10,7 +11,9 @@ export const register = ({ email, password, name }) => {
     },
     body: JSON.stringify({ email, password, name }),
   }).then((res) => {
-    return res.json();
+    if (res.status === 201) {
+      return res.json();
+    }
   });
 };
 
@@ -23,8 +26,9 @@ export const login = ({ email, password }) => {
     },
     body: JSON.stringify({ email, password }),
   }).then((res) => {
-    return res.json();
-  // eslint-disable-next-line consistent-return
+    if (res.status === 200) {
+      return res.json();
+    }
   }).then((data) => {
     if (data.token) {
       localStorage.setItem('token', data.token);

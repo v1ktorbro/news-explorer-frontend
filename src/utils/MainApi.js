@@ -54,7 +54,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  url: 'http://127.0.0.1:3001',
+  url: 'https://v1ktorbro.students.nomoreparties.xyz',
   headers: {
     Authorization: `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json',
