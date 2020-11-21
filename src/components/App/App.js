@@ -157,7 +157,7 @@ function App() {
       auth.getInfoLogin(token).then((getInfo) => {
         setCurrentUser(getInfo);
         return setLoggedIn(true);
-      });
+      }).catch((err) => console.log(err));
     }
   };
 
@@ -170,7 +170,7 @@ function App() {
       mainApi.getSavedArticlesOfUser().then((savedCardsFromApi) => {
         setSavedNewsCards(savedCardsFromApi);
         return setIconActiveOfSavedCard(getLastArrayWithCards, savedCardsFromApi);
-      });
+      }).catch((err) => console.log(err));
     }
     if (lastRequest) {
       handleSearchNewsSubmit(lastRequest);
