@@ -2,7 +2,7 @@ import './SavedNews.css';
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 
-function SavedNews({ cards, onArticleDelete }) {
+function SavedNews({ cards, onArticleDelete, loggedIn }) {
   return (
     <section className="saved-news">
       <div className="saved-news__cards">
@@ -12,6 +12,7 @@ function SavedNews({ cards, onArticleDelete }) {
             key={card._id}
             card={card}
             onArticleDelete={onArticleDelete}
+            loggedIn={loggedIn}
           />
         ))}
       </div>

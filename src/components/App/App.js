@@ -27,7 +27,7 @@ function App() {
   const [isNewsSearchError, setIsNewsSearchError] = React.useState(false);
   const [newsCards, setNewsCards] = React.useState([]);
   const [savedNewsCards, setSavedNewsCards] = React.useState([]);
-  const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(true);
+  const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [registerSuccessPopupOpen, setRegisterSuccessPopupOpen] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
@@ -211,6 +211,7 @@ function App() {
               <SavedNews
                 cards={savedNewsCards}
                 onArticleDelete={handleDeleteArticle}
+                loggedIn={loggedIn}
               />
             </Route>
             )}
