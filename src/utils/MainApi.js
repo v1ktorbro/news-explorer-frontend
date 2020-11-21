@@ -6,6 +6,8 @@ class MainApi {
   }
 
   getSavedArticlesOfUser() {
+    // eslint-disable-next-line no-underscore-dangle
+    this._updateToken();
     return fetch(`${this.url}/articles`, {
       method: 'GET',
       headers: this.headers,
@@ -38,12 +40,23 @@ class MainApi {
       headers: this.headers,
     });
   }
+
+  _updateToken() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      localStorage.setItem('token', token);
+      this.headers = {
+        Authorization: token,
+        'Content-Type': 'application/json',
+      };
+    }
+  }
 }
 
 const mainApi = new MainApi({
   url: 'http://127.0.0.1:3001',
   headers: {
-    Authorization: localStorage.getItem('token'),
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json',
   },
 });

@@ -79,13 +79,6 @@ function App() {
       });
   };
 
-  React.useEffect(() => {
-    const lastRequest = localStorage.getItem('requestOfUser');
-    if (lastRequest) {
-      handleSearchNewsSubmit(lastRequest);
-    }
-  }, []);
-
   // eslint-disable-next-line arrow-body-style
   const compareArticles = (ownArt, outArt) => {
     // eslint-disable-next-line max-len
@@ -105,6 +98,7 @@ function App() {
       return outsiderCard;
     });
     setNewsCards(result);
+    localStorage.setItem('articles', JSON.stringify(result));
   };
 
   const handleSaveArticle = (dataOfArticle) => {
@@ -157,6 +151,37 @@ function App() {
     }).catch((err) => console.log(err));
   };
 
+  const handleCheckToken = () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      auth.getInfoLogin(token).then((getInfo) => {
+        setCurrentUser(getInfo);
+        return setLoggedIn(true);
+      });
+    }
+  };
+
+  React.useEffect(() => {
+    const lastRequest = localStorage.getItem('requestOfUser');
+    const getLastArrayWithCards = JSON.parse(localStorage.getItem('articles' || []));
+    const token = localStorage.getItem('token');
+    handleCheckToken();
+    if (token) {
+      mainApi.getSavedArticlesOfUser().then((savedCardsFromApi) => {
+        setSavedNewsCards(savedCardsFromApi);
+        return setIconActiveOfSavedCard(getLastArrayWithCards, savedCardsFromApi);
+      });
+    }
+    if (lastRequest) {
+      handleSearchNewsSubmit(lastRequest);
+    }
+  }, []);
+
+  const signOut = () => {
+    localStorage.removeItem('token');
+    setLoggedIn(false);
+  };
+
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
@@ -181,7 +206,12 @@ function App() {
           />
           )}
           <Header onMain>
-            <Navigation onMain loggedIn={loggedIn} onLogin={handleLoginPopup} />
+            <Navigation
+              onMain
+              loggedIn={loggedIn}
+              onLogin={handleLoginPopup}
+              signOut={signOut}
+            />
           </Header>
           <Main
             onSearchNews={handleSearchNewsSubmit}
@@ -205,7 +235,11 @@ function App() {
           Component={(
             <Route path="/saved-news">
               <Header>
-                <Navigation loggedIn={loggedIn} savedNews />
+                <Navigation
+                  loggedIn={loggedIn}
+                  signOut={signOut}
+                  savedNews
+                />
               </Header>
               <SavedNewsHeader cards={savedNewsCards} />
               <SavedNews
