@@ -1,0 +1,11 @@
+.login__input-error {
+  color: red;
+  margin-left: 34px;
+  margin-right: 34px;
+}
+
+@media screen and (max-width: 425px) {
+  .login__input-error {
+    margin-left: 16px;
+  }
+}

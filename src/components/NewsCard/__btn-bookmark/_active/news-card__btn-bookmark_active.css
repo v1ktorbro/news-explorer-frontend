@@ -1,0 +1,7 @@
+.news-card__btn-bookmark_active {
+  background-image: url(../../../../images/bookmark_active.svg) !important;
+}
+
+.news-card__btn-bookmark_active:hover {
+  background-image: url(../../../../images/bookmark_active.svg) !important;
+}

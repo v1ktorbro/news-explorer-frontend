@@ -1,13 +1,35 @@
 @import url(./_closed/news-card__hint-login_closed.css);
 
 .news-card__hint-login {
-  position: absolute;
-  top: 24px;
-  right: 69px;
   height: 40px;
+  margin-right: 5px;
   border-radius: 8px;
   background-color: #ffffff;
   display: flex;
+  text-align: center;
+  white-space: nowrap;
   padding-left: 12px;
   padding-right: 12px;
+  max-width: 159px;
+  transition: all .3s;
+}
+
+.news-card__hint-login:hover {
+  transform: scale(1.05);
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 830px) {
+  .news-card__hint-login {
+    white-space: normal;
+    max-width: 90px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .news-card__hint-login {
+    height: 45px;
+    max-width: 169px;
+    white-space: nowrap;
+  }
 }

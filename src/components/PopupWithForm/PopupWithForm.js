@@ -5,7 +5,7 @@ import React from 'react';
 
 function PopupWithForm({
   name, children, title,
-  isOpen, onClose,
+  isOpen, onClose, onSubmit,
 }) {
   const overlayPopup = (evt) => {
     if (evt.target.classList.contains(`popup-${name}`)) {
@@ -22,7 +22,7 @@ function PopupWithForm({
 
   return (
     <section onClick={overlayPopup} className={`popup popup-${name} ${!isOpen && 'popup_closed'}`}>
-      <form className="popup__container">
+      <form onSubmit={onSubmit} className="popup__container">
         <span className="popup__close" onClick={onClose} />
         <h2 className="popup__title">{ title }</h2>
         { children }

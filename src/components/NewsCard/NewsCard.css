@@ -1,5 +1,6 @@
 @import url(./__block-image/news-card__block-image.css);
 @import url(./__image-main/news-card__image-main.css);
+@import url(./__btn-block/news-card__btn-block.css);
 @import url(./__btn-bookmark/news-card__btn-bookmark.css);
 @import url(./__btn-delete/news-card__btn-delete.css);
 @import url(./__hint-login/news-card__hint-login.css);
