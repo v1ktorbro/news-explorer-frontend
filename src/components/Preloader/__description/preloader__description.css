@@ -1,0 +1,29 @@
+.preloader__description {
+  margin: 24px auto 80px auto;
+  max-width: 296px;
+  padding: 0 30px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #B6BCBF;
+  white-space: pre-wrap;
+}
+
+.preloader__description_error-result {
+  margin-top: 16px !important;
+}
+
+@media screen and (max-width: 1280px) {
+  .preloader__description {
+    margin-bottom: auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .preloader__description {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

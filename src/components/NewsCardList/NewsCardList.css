@@ -1,0 +1,9 @@
+@import url(./__title/news-card-list__title.css);
+@import url(./__cards/news-card-list__cards.css);
+@import url(./__btn-show-more/news-card-list__btn-show-more.css);
+
+.news-card-list {
+  background-color: #F5F6F7;
+  display: flex;
+  flex-direction: column;
+}

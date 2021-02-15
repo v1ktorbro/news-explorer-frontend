@@ -1,0 +1,13 @@
+@import url(./_closed/news-card__hint-login_closed.css);
+
+.news-card__hint-login {
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  display: flex;
+  padding-left: 12px;
+  padding-right: 12px;
+}

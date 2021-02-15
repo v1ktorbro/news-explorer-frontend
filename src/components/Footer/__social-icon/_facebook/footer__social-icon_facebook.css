@@ -1,0 +1,5 @@
+@media screen and (max-width: 768px) {
+  .footer__social-icon_facebook {
+    border-radius: 5px;
+  }
+}

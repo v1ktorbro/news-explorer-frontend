@@ -1,0 +1,93 @@
+@import url(./_active/navigation__link_active.css);
+@import url(./_active-main/navigation__link_active-main.css);
+@import url(./_main/navigation__link_main.css);
+
+.navigation__link {
+  text-decoration: none;
+  color: #1A1B22;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 30px 32px 26px 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .navigation__link {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 20px;
+    margin-bottom: 18px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .navigation__link {
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 16px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .navigation__link {
+    line-height: 24px;
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .navigation__link {
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .navigation__link {
+    line-height: 24px;
+    font-size: 20px;
+    margin-top: 36px;
+    margin-left: 40px;
+    margin-bottom: 0px;
+  }
+
+  .navigation__link:first-of-type {
+    max-width: 75px;
+  }
+
+  .navigation__link:last-of-type {
+    width: 288px;
+    margin-top: 36px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navigation__link {
+    font-size: 18px;
+    margin-top: 36px;
+    margin-left: 40px;
+    margin-bottom: 0px;
+  }
+
+  .navigation__link:last-of-type {
+    width: 288px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .navigation__link {
+    margin-top: 26px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navigation__link {
+    margin-left: 16px;
+  }
+}

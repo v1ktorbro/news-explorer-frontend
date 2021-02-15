@@ -1,0 +1,11 @@
+.header__burger-menu_active::before {
+  transform: rotate(45deg);
+  top: 0 !important;
+  transition: top .2s linear, transform .2s ease .2s;
+}
+
+.header__burger-menu_active::after {
+  transform: rotate(-45deg);
+  top: 0 !important;
+  transition: top .2s linear, transform .2s ease .2s;
+}

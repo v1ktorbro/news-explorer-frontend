@@ -1,0 +1,55 @@
+@import url(./__logo/header__logo.css);
+@import url(./__burger-menu/header__burger-menu.css);
+@import url(./_main/header_main.css);
+@import url(./_state-blind/header_state-blind.css);
+
+.header {
+  max-height: 79px;
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  justify-content: space-between;
+  border-bottom: 1px solid #d1d2d6;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    max-height: 59px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .header {
+    max-height: 65px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .header {
+    max-height: 58px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .header {
+    max-height: 62px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    max-height: 62px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    max-height: 59px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    max-height: 55px;
+  }
+}

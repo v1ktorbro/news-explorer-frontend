@@ -1,0 +1,9 @@
+.login__btn-submit_active {
+  background-color: #2F71E5 !important;
+  color: #ffffff !important;
+  cursor: pointer;
+}
+
+.login__btn-submit_active:hover {
+  transform: scale(1.05);
+}

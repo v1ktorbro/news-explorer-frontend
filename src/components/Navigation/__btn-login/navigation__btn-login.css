@@ -1,0 +1,77 @@
+.navigation__btn-login {
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Roboto';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  width: 176px;
+  height: 48px;
+  border-radius: 100px;
+  outline: none;
+  border: 1px solid #ffffff;
+  margin: 19px 0 13px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.navigation__btn-login:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 1024px) {
+  .navigation__btn-login {
+    font-size: 16px;
+    line-height: 24px;
+    width: auto;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .navigation__btn-login {
+    height: 36px;
+    margin-left: 0px;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .navigation__btn-login {
+    width: 230px;
+    height: 56px;
+    margin-left: 40px;
+    margin-top: 38px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navigation__btn-login {
+    width: 345px;
+    height: 58px;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 19px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .navigation__btn-login {
+    width: 288px;
+    height: 56px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navigation__btn-login {
+    margin: 24px 16px;
+  }
+}

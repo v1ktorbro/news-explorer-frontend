@@ -1,0 +1,42 @@
+@import url(./__link/footer__link.css);
+@import url(./__links/footer__links.css);
+@import url(./__list-item/footer__list-item.css);
+@import url(./__list/footer__list.css);
+@import url(./__signature/footer__signature.css);
+@import url(./__social-icon/footer__social-icon.css);
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    height: 64px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer {
+    position: relative;
+    flex-direction: column-reverse;
+    height: 150px;
+    max-width: 560px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer {
+    height: 200px;
+    max-width: 425px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    height: 176px;
+    max-width: 320px;
+  }
+}

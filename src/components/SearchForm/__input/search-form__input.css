@@ -1,0 +1,38 @@
+.search-form__input {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: 'Roboto';
+  width: 100%;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  padding-left: 24px;
+  padding-right: calc(168px + 10px); /* ширина btn-search + 10px чтобы при переполнении инпута текст не пропадал */
+  z-index: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .search-form__input {
+    padding-right: calc(160px + 10px)
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .search-form__input {
+    height: 56px;
+    width: calc(345px - 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search-form__input {
+    height: 56px;
+    width: calc(288px - 32px); /* ширина кнопки и padding левый, правый  */
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

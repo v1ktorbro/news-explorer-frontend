@@ -1,0 +1,44 @@
+.footer__signature {
+  margin: 0 0 0 104px;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #B6BCBF;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__signature {
+    font-size: 13px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .footer__signature {
+    width: 300px;
+    margin-left: 40px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .footer__signature {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer__signature {
+    width: 300px;
+    margin: 30px 16px 22px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

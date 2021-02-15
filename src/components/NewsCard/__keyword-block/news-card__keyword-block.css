@@ -1,0 +1,23 @@
+.news-card__keyword-block {
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+}
+
+@media screen and (max-width: 425px) {
+  .news-card__keyword-block {
+    width: 110px;
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .news-card__keyword-block {
+    width: 88px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,25 @@
+.footer__links_string {
+  margin-left: auto;
+  margin-right: 53px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__links_string {
+    margin-left: 28px;
+    margin-right: 26px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .footer__links_string {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer__links_string {
+    margin-left: 28px;
+    margin-right: 26px;
+  }
+}

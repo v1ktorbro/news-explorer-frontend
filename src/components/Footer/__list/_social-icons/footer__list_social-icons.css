@@ -1,0 +1,22 @@
+@media screen and (max-width: 560px) {
+  .footer__list_social-icons {
+    top: 30px;
+    right: 85px;
+    left: auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer__list_social-icons {
+    top: 110px;
+    left: 62.5px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer__list_social-icons {
+    top: 22px;
+    right: 18px;
+    left: auto;
+  }
+}

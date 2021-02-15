@@ -1,0 +1,41 @@
+@import url(./__title/about__title.css);
+@import url(./__text/about__text.css);
+@import url(./__description/about__description.css);
+@import url(./__avatar/about__avatar.css);
+@import url(./__author/about__author.css);
+
+.about {
+  height: 624px;
+  display: flex;
+}
+
+@media screen and (max-width: 1280px) {
+  .about {
+    height: 584px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about {
+    height: 480px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .about {
+    height: 354px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .about {
+    flex-direction: column;
+    height: 820px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about {
+    height: 752px;
+  }
+}

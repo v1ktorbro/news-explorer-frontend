@@ -1,0 +1,23 @@
+.news-card__keyword-text {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .news-card__keyword-text {
+    font-size: 11px;
+    line-height: 21px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .news-card__keyword-text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

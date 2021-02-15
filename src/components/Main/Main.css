@@ -1,0 +1,43 @@
+@import url(./__title/main__title.css);
+@import url(./__description/main__description.css);
+
+.main {
+  background-image: url(../../images/main.png);
+  width: 100%;
+  height: 576px;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    height: 410px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .main {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .main {
+    height: 365px;
+  }
+}
+
+
+@media screen and (max-width: 560px) {
+  .main {
+    background-image: url(../../images/main_320px.png);
+    height: 490px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main {
+    height: 536px;
+  }
+}

@@ -1,0 +1,4 @@
+.header_state-blind {
+  background-color: #1A1B22;
+  transition: background-color .2s linear;
+}

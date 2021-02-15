@@ -1,0 +1,10 @@
+.navigation__link_active-main {
+  margin-bottom: -1px !important;
+  border-bottom: 3px solid #ffffff !important;
+}
+
+@media screen and (max-width: 425px) {
+  .navigation__link_active-main {
+    border-bottom: none !important;
+  }
+}

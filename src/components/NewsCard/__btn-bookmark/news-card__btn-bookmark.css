@@ -1,0 +1,52 @@
+.news-card__btn-bookmark {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 24px;
+  right: 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  background-image: url(../../../images/bookmark.svg);
+  background-repeat: no-repeat;
+  background-size: 14px 19px;
+  background-position: center;
+  border-radius: 8px;
+  transition: all .3s;
+}
+
+.news-card__btn-bookmark:hover {
+  background-image: url(../../../images/bookmark_hover.svg);
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 830px) {
+  .news-card__btn-bookmark {
+    right: 14px;
+    top: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news-card__btn-bookmark {
+    right: 8px;
+    top: 8px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .news-card__btn-bookmark {
+    width: 45px;
+    height: 45px;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .news-card__btn-bookmark {
+    right: 16px;
+    top: 16px;
+  }
+}

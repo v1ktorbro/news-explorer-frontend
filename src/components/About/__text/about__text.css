@@ -1,0 +1,38 @@
+.about__text {
+  margin: 131px auto auto 56px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 1024px) {
+  .about__text {
+    margin-top: 101px;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .about__text {
+    margin-top: auto;
+    margin-left: auto;
+    max-width: 424px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__text {
+    margin-top: 40px;
+    margin-left: 32px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .about__text {
+    margin: 30px auto 19px auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about__text {
+    margin: 24px auto 80px auto;
+  }
+}
